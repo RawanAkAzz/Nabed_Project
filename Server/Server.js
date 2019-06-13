@@ -43,13 +43,13 @@ app.post('/Register', (req , res)=>{
    db.Doctor.create({name: name ,username:username,password:password,phoneNumber:phoneNumber, description
       : description ,Location:Location , fbAccount: fbAccount,})
          .then(function(doctor){
-           return res.send({name: name// ,username:username,phoneNumber:phoneNumber, description
-   //  : description ,Location:Location , fbAccount: fbAccount*?});
+           return res.send({name: name ,username:username,phoneNumber:phoneNumber, description
+     : description ,Location:Location , fbAccount: fbAccount});
          })
          .catch(function(err){
             return res.status(HTTP_SERVER_ERROR).send(err.message);
         })
    } );
-})
+
 const port = 5001;
 app.listen(port , () => console.log( `listening on port ${port}`));

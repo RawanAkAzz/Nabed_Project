@@ -18,11 +18,15 @@ class doctorCards extends Component {
  
  render() { 
     return(
-    <div>
-      
-         
-        
-    <div>
+     
+      <div className="todoListMain">
+        <div className="header">
+          <form>
+            <input placeholder="Task" />
+            <button type="submit"> Add Task </button>
+          </form>
+        </div>
+    {/* <div>
 <article className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10"/>
   <div className="tc">
     <img alt="" src="http://tachyons.io/img/avatar_1.jpg" class="br-100 h3 w3 dib" title="Photo of a kitty staring at you"/>
@@ -34,7 +38,7 @@ class doctorCards extends Component {
     She loves to get chin scratches and will
     roll around on the floor waiting for you give her more of them.
   </p>
- </div>
+ </div> */}
 
  
    </div>  

@@ -18,12 +18,12 @@ class Register extends Component {
 
   onChange(e) {
     console.log(e.target.value);
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.email]: e.target.value });
   }
   onClick(event) {
     event.preventDefault();
     const data = this.state
-    fetch('http://localhost:5000/Register', {
+    fetch('http://localhost:5001/Register', {
       method: 'post',
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
