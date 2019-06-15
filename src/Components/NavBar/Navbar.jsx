@@ -46,6 +46,13 @@ class NavBar extends Component {
             >
               LogIn
             </a>
+            
+            {/* <a
+              className="f6 fw4 hover-black no-underline black-70 dib ml2 pv2 ph3 ba"
+              href="/doctorCards"
+            >
+              Register
+            </a> */}
           </div>
         </nav>
         {/* <Router>
