@@ -9,43 +9,60 @@ class SignIn extends Component {
      }
    }
    
-   onclick = event =>{
-     this.state({
-       [event.target.email]:event.target.value
-     })
-   }
-   clicked() {
-    this.setState({
-      email: "",
-      password: "",
-      isEnabled: false
-    });
-  }
+//    handleChange(e) {
+//     console.log(e.target.value);
+//     this.setState({[e.target.name] : e.target.value});
+// }
+
+//    onClick = event =>{
+//      this.state({
+//        [event.target.email]:event.target.value
+//      })
+//    }
+//    clicked() {
+//     this.setState({
+//       email: "",
+//       password: "",
+//       isEnabled: false
+//     });
+//   }
+
+//       click(event) {
+//       fetch({
+//           type: 'POST',
+//           url: '/signin ',
+//           data: this.state,
+//           dataType: 'json'
+//         });
+//         console.log(this.state);
+//       }
+
 
   
-  render(){
+render(){
     return (
+    
+       <div>
       <article class="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
         <main class="pa4 black-80">
           <form class="measure center">
-            <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+          <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
               <legend class="f4 fw6 ph0 mh0">LogIn</legend>
               <div class="mt3">
                 <label class="db fw6 lh-copy f6" for="email-address">
-                  Email
-                </label>
+              </label>
                 <input
-                  class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                 class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="email"
-                  name="email-address"
+                   name="email-address"
                   id="email-address"
-                  onclick={this.onclick}
-                />
-                 {/* <button 
+                 onlick={this.onclick}
+               />
+                  {/* <button 
               
-              onChange={this.onChange} disabled={!isEnabled}> Show Shops
+             onChange={this.onChange} disabled={!isEnabled}> Show Shops
               
-              </button> */}
+         </button> */}
 
               </div>
               <div class="mv3">
@@ -57,7 +74,7 @@ class SignIn extends Component {
                   type="password"
                   name="password"
                   id="password"
-                    on={this.onChange}
+                    onChange={this.onChange}
                 />
               </div>
             </fieldset>
@@ -80,7 +97,10 @@ class SignIn extends Component {
           </form>
         </main>
       </article>
-    );
-    }
+    </div>
+    )}
+   
+  
+    
   }
 export default SignIn;
