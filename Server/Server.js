@@ -33,17 +33,16 @@ app.post('SignIn', function(req,res){
 
 app.post('/Register', (req , res)=>{
   var name = req.body.name 
-  var username = req.body.username
    var password = req.body.password
   var phoneNumber = req.body.phoneNumber
   var description = req.body.description
   var  Location = req.body.Location
   var fbAccount = req.body.fbAccount
   
-   db.Doctor.create({name: name ,username:username,password:password,phoneNumber:phoneNumber, description
+   db.Doctor.create({name: name ,password:password,phoneNumber:phoneNumber, description
       : description ,Location:Location , fbAccount: fbAccount,})
          .then(function(doctor){
-           return res.send({name: name ,username:username,phoneNumber:phoneNumber, description
+           return res.send({name: name ,phoneNumber:phoneNumber, description
      : description ,Location:Location , fbAccount: fbAccount});
          })
          .catch(function(err){

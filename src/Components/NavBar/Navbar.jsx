@@ -3,11 +3,11 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav class="dt w-100 mw8 center">
-          <div class="dtc w2 v-mid pa3">
+        <nav className="dt w-100 mw8 center">
+          <div className="dtc w2 v-mid pa3">
             <a
               href="/"
-              class="dib w2 h2 pa1 ba b--black-90 grow-large border-box"
+              className="dib w2 h2 pa1 ba b--black-90 grow-large border-box"
             >
               {/* <svg
               class="link black-90 hover-black"
@@ -20,28 +20,28 @@ class NavBar extends Component {
             </svg> */}
             </a>
           </div>
-          <div class="dtc v-mid tr pa3">
+          <div className="dtc v-mid tr pa3">
             <a
-              class="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
+              className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
               href="/Categories"
             >
               Categories
             </a>
             <a
-              class="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
+              className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
               href="/DoctorCards"
             >
               Doctors
             </a>
             <a
-              class="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
+              className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
               href="/about"
             >
               About
             </a>
 
             <a
-              class="f6 fw4 hover-black no-underline black-70 dib ml2 pv2 ph3 ba"
+              className="f6 fw4 hover-black no-underline black-70 dib ml2 pv2 ph3 ba"
               href="/SignIn"
             >
               LogIn
