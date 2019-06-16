@@ -42,13 +42,14 @@ class Register extends Component {
       type: 'POST',
       url: 'http://localhost:5001/Register',
       data: that.state.states,
-      success: function (data) {
+      success: function (data) { 
+        alert("the Name is used, please use another name")
       console.log("hide") 
 
       },
       error: function (request, status, error) {
   
-        alert("the Name is used, please use another name")
+      
       }
     })
   }

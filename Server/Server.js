@@ -13,10 +13,12 @@ app.use(cors())
 
 
 app.get('/Doctors', (req , res)=>{
-    db.Doctor.find({}).then(function(doctor){
-        return res.send(doctor);
+    db.Doctor.find({}).then(function(doctors){
+       console.log("RESSSSULt",doctors)
+        return res.send(doctors);
      })
      .catch(function(err){
+        console.log("ERRRROR")
         return res.status(HTTP_SERVER_ERROR).send(err.message);
     })
 } );

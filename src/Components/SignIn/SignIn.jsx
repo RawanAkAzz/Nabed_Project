@@ -1,30 +1,37 @@
 import React, { Component } from "react";
+import { Link  } from 'react-router-dom';
+
 import $ from 'jquery'
 
 class SignIn extends Component {
    constructor(props){
      super(props);
-     this.state = {
+     this.state = { states :{
        email : "",
        password : ""
+     }
+       
      } 
-    //  this.onChange = this.onChange.bind(this);
-    //   this.onClick = this.onClick.bind(this);
+      this.onChange = this.onChange.bind(this);
+       this.onClick = this.onClick.bind(this);
    }
    
   
  
 
  
-//  onChange(e) {
-//    var states = this.state.states
-//    var email = e.target.id
-//    var value = e.target.value
+  onChange(e) {
+   var states = this.state.states
+    var email = e.target.id
+    var value = e.target.value
 //    console.log(email)
-//    states[email] = value
-//    this.setState({states: states})
-  
-//  }
+ if( states[email] = value){
+   this.setState({states: states})
+    console.log(this.state.states)
+ }else {
+   alert("rawan")
+ }
+ }
  onClick(event) {
    event.preventDefault();
 
@@ -32,14 +39,15 @@ class SignIn extends Component {
    var that = this
    $.ajax({
      type: 'POST',
-     url: 'https://http://localhost:3000/',
+     url: 'http://localhost:5001/SignIn',
      data: that.state.states,
      success: function (data) {
-      
+        alert("Welcome")
+      console.log("hide")
 
      },
      error: function (request, status, error) {
-       console.log(error)
+     
      }
    })
  }
@@ -87,11 +95,14 @@ render(){
               </div>
             </fieldset>
             <div class="">
-              <input
-                class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                type="submit"
-                value="LogIn"
-              />
+            <button onClick={this.onClick}>
+                  <Link
+                    
+                    to="/ProfilePage"
+                  >
+                    Enter
+                  </Link>
+                </button>
             </div>
             <div class="lh-copy mt3">
                <a
