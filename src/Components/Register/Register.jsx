@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import $ from 'jquery'
+import { Link  } from 'react-router-dom';
 
 class Register extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { states :{
       name: "",
       fbAccount: "",
       description: "",
@@ -12,28 +14,43 @@ class Register extends Component {
       Location: "",
       password: ""
     }
+  }
     this.onChange = this.onChange.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   componentDidMount() {
-    fetch('https://http://localhost:3000/')
-      .then(response => response.json())
-      .then(data => this.setState({ data }));
+    // fetch('https://http://localhost:3000/')
+    //   .then(response => response.json())
+    //   .then(data => this.setState({ data }));
   }
   onChange(e) {
-    console.log(e.target.value);
-    this.setState({ [e.target.name]: e.target.value });
+    var states = this.state.states
+    var name = e.target.id
+    var value = e.target.value
+    states[name] = value
+    this.setState({states: states})
+    console.log(this.state.states)
+   
   }
   onClick(event) {
     event.preventDefault();
 
-    fetch("/Register", {
-      method: "get",
-      body: JSON.stringify(),
-      headers: { "Content-Type": "application/json" }
+    //console.log(this.state.states)
+    var that = this
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:5001/Register',
+      data: that.state.states,
+      success: function (data) {
+      console.log("hide") 
+
+      },
+      error: function (request, status, error) {
+  
+        alert("the Name is used, please use another name")
+      }
     })
-      .then(response => response.json())
-      .then(state => this.setState(state));
   }
   render() {
     return (
@@ -47,11 +64,11 @@ class Register extends Component {
                   Name
                 </label>
                 <input
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="pa2 input-reset ba  hover-white w-100"
                   type="text"
                   name="name"
                   id="name"
-                  onClick={this.onClick}
+                  onChange={this.onChange}
                 />
                 {/* <button 
               
@@ -65,8 +82,8 @@ class Register extends Component {
                 <input
                   className="b pa2 input-reset ba bg-transparent  w-100"
                   type="e-mail"
-                  name="e-mail;"
-                  id="e-mail"
+                  name="email"
+                  id="email"
                   onChange={this.onChange}
                 />
               </div>
@@ -82,17 +99,65 @@ class Register extends Component {
                   onChange={this.onChange}
                 />
               </div>
+               <div class="mv3">
+                <label class="db fw6 lh-copy f6" htmlFor="phoneNumber">
+                phoneNumber
+                </label>
+                <input
+                  class="b pa2 input-reset ba bg-transparent w-100"
+                  type="text"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  onChange={this.onChange}
+                />
+              </div>
+              <div class="mv3">
+                <label class="db fw6 lh-copy f6" htmlFor="description">
+                description
+                </label>
+                <input
+                  class="b pa2 input-reset ba bg-transparent w-100"
+                  type="text"
+                  name="description"
+                  id="description"
+                  onChange={this.onChange}
+                />
+              </div>
+              <div class="mv3">
+                <label class="db fw6 lh-copy f6" htmlFor="Location">
+                Location
+                </label>
+                <input
+                  class="b pa2 input-reset ba bg-transparent w-100"
+                  type="text"
+                  name="Location"
+                  id="Location"
+                  onChange={this.onChange}
+                />
+              </div>
+              <div class="mv3">
+                <label class="db fw6 lh-copy f6" htmlFor="fbAccount">
+                fbAccount
+                </label>
+                <input
+                  class="b pa2 input-reset ba bg-transparent w-100"
+                  type="text"
+                  name="fbAccount"
+                  id="fbAccount"
+                  onChange={this.onChange}
+                />
+              </div>
             </fieldset>
-
+           
             <div>
               <center>
-                <button>
-                  <a
+                <button onClick={this.onClick}>
+                  <Link
                     
-                    href="/DoctorCards"
+                    to="/SignIn"
                   >
                     Enter
-                  </a>
+                  </Link>
                 </button>
               </center>
             </div>

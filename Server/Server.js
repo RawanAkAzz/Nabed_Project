@@ -1,9 +1,15 @@
 const express = require('express');
 const db = require("./db.js");
 const app = express();
+var cors = require('cors')
 const bodyParser= require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors())
+
+
+
+
 
 
 app.get('/Doctors', (req , res)=>{
@@ -32,6 +38,7 @@ app.post('SignIn', function(req,res){
 })
 
 app.post('/Register', (req , res)=>{
+   console.log(req.body.name)
   var name = req.body.name 
    var password = req.body.password
   var phoneNumber = req.body.phoneNumber
@@ -40,13 +47,12 @@ app.post('/Register', (req , res)=>{
   var fbAccount = req.body.fbAccount
   
    db.Doctor.create({name: name ,password:password,phoneNumber:phoneNumber, description
-      : description ,Location:Location , fbAccount: fbAccount,})
+      : description ,Location:Location , fbAccount: fbAccount})
          .then(function(doctor){
-           return res.send({name: name ,phoneNumber:phoneNumber, description
-     : description ,Location:Location , fbAccount: fbAccount});
+         res.send(doctor)
          })
          .catch(function(err){
-            return res.status(HTTP_SERVER_ERROR).send(err.message);
+            return res.status(404).send(err.message);
         })
    } );
 

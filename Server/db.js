@@ -8,13 +8,12 @@ db.once('open', function() {
 });
 
 let doctorSchema= mongoose.Schema({
-    "name": String ,
-     "fbAccount": String,
-    "description": String,
-    "username": String,
-    "phoneNumber":Number,
+    "name": { type : String , unique : true, required : true },
+     "password":{ type : String , unique : true, required : true },
+    "phoneNumber": { type : String , unique : true, required : true },
+    "description":String,
     "Location":String,
-    "password": String
+    "fbAccount": { type : String , unique : true, required : true }
 });
 
 let Doctor = mongoose.model('Doctor', doctorSchema);

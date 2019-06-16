@@ -12,7 +12,7 @@ import DoctorCards from "./Components/Cards/doctorCards";
 import HomeCards from "./Components/Cards/homeCards";
 import About from "./Components/AboutComp/About";
 import Categories from "./Components/Categories/Categories";
-
+import ProfilePage from "./Components/ProfilePage/Profile";
 class App extends Component {
   render() {
     return (
@@ -26,6 +26,8 @@ class App extends Component {
           <Route exact path="/HomeCards" component={HomeCards} />
           <Route exact path="/about" component={About} />
           <Route excut path="/Categories" component={Categories} />
+          <Route exact path="/ProfilePage" component={ProfilePage} />
+
         </Router>
       </div>
     );
