@@ -1,192 +1,104 @@
 import React, { Component } from "react";
-import $ from 'jquery'
 import { storage } from "../firebase/firebase";
 
 class ProfilePage extends Component {
      constructor(props){
-//        super(props);
-//           this.state = {
-//             image:null,
-//             url:''
-//             // progress:''
-//           } 
-// this.handleChang = this.handleChang.bind(this)
-//         }
-//       handleChang = e => {
-//         if(e.target.files[0]){
-//           const image = this.state
-//              this.setState(()=>({image}));
-//         }
-//       }
-
-//       Click(event) {
-//         event.preventDefault();
-    
-//         //console.log(this.state.states)
-//         var that = this
-//         $.ajax({
-//           type: 'POST',
-//           url: 'http://localhost:5001/Profile',
-//           data: that.state.states,
-//           success: function (data) { 
-             
-//           console.log("hide") 
-    
-//           },
-//           error: function (request, status, error) {
-  
-//           }
-//         })
-//       }
-//     handleUpload =() => {
-//       const {image} = this.state;
-//       const upload = storage.ref(`files/${image.name}`).put(image);
-//       upload.on(
-//         "state_changed",
-//       (snapshot) => {
-//         //  const progress = Math.round(snapshot.bytesTransferred / snapshot.totalBytes * 100);
-// 			  // this.setState({ progress });
-//       },
-//       (error)=> {
-//         console.log(error);
-        
-//       },
-//       ()=> {
-//     // complete function ....
-//     storage.ref('files').child(image.name).getDownloadURL().then((cvFileUrl) => {
-//       setTimeout(() => {
-//         this.setState({ url, image: image.name, progress: 0 });
-//       }, 2000);
-//       this.props.changeImage(url);
-//     })
-
-//       });
-//     }
-
-//   render() {
-//     const style={
-//       float:'left',
-//       height:'100vh',
-//       display:'felx',
-//       flexDirectiuon:'column',
-//       alignItems:'center',
-//       justifyContent:'center'
-//     }
-//         return(
-//           <div>
-//             <center>
-//             <input type='file' onChange={this.handleChange} />
-//          <button onClick={this.handleUpload}> Upload </button>
-//          <button onClick={this.Click.bind(this)}> Upload </button>
-
-//            <img src ={this.state.url || 'https://via.placeholder'} alt ="Upload" height ="300" width="400"/>
-//         </center>  </div>
-//         )
-//       }
-//     }
-  
-    
-  super(props);
-  this.state = {
-    image: null,
-    url: '',
-    progress: 0
-  };
-}
-componentDidMount() {
-  this.setState({
-    url: this.props.url
-  });
-}
-handleImgChange(e) {
-  if (e.target.files[0]) {
-    const image = e.target.files[0];
-    this.setState(() => ({ image }));
-    // this.setState({ image });
-  }
-}
-
-handleImgUpload() {
-  const { image } = this.state;
-  const upload= storage.ref(`images/${image.name}`).put(image);
-  upload.on(
-    'state_changed',
-    (snapshot) => {
-    
-      const progress = Math.round(snapshot.bytesTransferred / snapshot.totalBytes * 100);
-      this.setState({ progress });
-    },
-    (error) => {
-    
-      console.log(error);
-    },
-    () => {
-      
-      storage.ref('images').child(image.name).getDownloadURL().then((url) => {
-        setTimeout(() => {
-          this.setState({ url, progress: 0 }, () => this.props.changeImg(this.state.imgUrl));
-        }, 2000);
+      super(props);
+      this.state = {
+        image: null,
+        url: '',
+        progress: 0
+      };
+    }
+    componentDidMount() {
+      this.setState({
+        url: this.props.url
       });
     }
-  );
-}
-
-render() {
-  const style = {
-    float: 'left',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
-  };
-
-  return (
-    <div>
-      <div className="input-group mb-3">
-        <div className="input-group-prepend">
-          <button type="button" id="inputGroupFileAddon01" onClick={this.handleImgUpload.bind(this)}>
-            Upload Image
-          </button>
+    handleChange(e) {
+      if (e.target.files[0]) {
+        const image = e.target.files[0];
+        this.setState(() => ({ image }));
+      }
+    }
+  
+    onUpload() {
+      const { image } = this.state;
+      const upload = storage.ref(`images/${image.name}`).put(image);
+      upload.on(
+        'state_changed',
+        (snapshot) => {
+          const progress = Math.round(snapshot.bytesTransferred / snapshot.totalBytes * 100);
+          this.setState({ progress });
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          storage.ref('images').child(image.name).getDownloadURL().then((url) => {
+            setTimeout(() => {
+              this.setState({ url, progress: 0 }, () => this.props.changeImg(this.state.url));
+            }, 1000);
+          });
+        }
+      );
+    }
+  
+    render() {
+      const style = {
+        float: 'left',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
+      };
+  
+      return (
+        <div>
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <button type="button" id="inputGroupFileAddon01" onClick={this.onUpload.bind(this)}>
+                Upload Photo
+              </button>
+            </div>
+            <div className="custom-file">
+              <input
+                className="custom-file-input"
+                id="inputGroupFile01"
+                aria-describedby="inputGroupFileAddon01"
+                type="file"
+                accept="image/*"
+                data-max-size="5000"
+                onChange={this.handleChange.bind(this)}
+              />
+              <label className="custom-file-label" htmlFor="inputGroupFile01" value="">
+                Choose your image
+              </label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-4">
+              <img
+                src={
+                  this.props.url ||
+                  'https://via.placeholder'
+                }
+                alt="uploaded images"
+                height="90"
+                width="90"
+              />
+            </div>
+            <div className="col-sm-4">
+              <progress value={this.state.progress} max="100" />
+            </div>
+            <div className="col-sm-4" />
+          </div>
         </div>
-        <div className="custom-file">
-          <input
-            className="custom-file-input"
-            id="inputGroupFile01"
-            aria-describedby="inputGroupFileAddon01"
-            type="file"
-            accept="image/*"
-            data-max-size="5000"
-            onChange={this.handleImgChange.bind(this)}
-          />
-          <label className="custom-file-label" htmlFor="inputGroupFile01" value="">
-            Choose File
-          </label>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-sm-4">
-          <img
-            src={
-              this.props.imgUrl ||
-              'https://firebasestorage.googleapis.com/v0/b/khsoosi-upload-file-img.appspot.com/o/images%2Fcbde4e59089dcada08218b49a815175d.svg?alt=media&token=0804202d-9e8f-4a41-9be6-836a37a5475e'
-            }
-            alt="uploaded images"
-            height="100"
-            width="100"
-          />
-        </div>
-        <div className="col-sm-4">
-          <progress value={this.state.progress} max="100" />
-        </div>
-        <div className="col-sm-4" />
-      </div>
-    </div>
-  );
-}
-}
+      );
+    }
+  }
+  
   
   
   export default ProfilePage;
-
   
-
