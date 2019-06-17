@@ -98,7 +98,7 @@ render(){
             <button onClick={this.onClick}>
                   <Link
                     
-                    to="/ProfilePage"
+                    to="/doctorCards"
                   >
                     Enter
                   </Link>

@@ -5,10 +5,10 @@ class DoctorCards extends Component {
  constructor(props){
   super(props);
    this.state = {
-     doctors: [1,2,3] 
+     doctors:[1,2]
    }
    }
-   componentDidMount(){
+     componentDidMount(){
     fetch('http://localhost:5001/Doctors')
        .then(res => res.json())
        .then(doctors => this.setState({doctors} ));
@@ -18,8 +18,7 @@ class DoctorCards extends Component {
       <div className="form-style-7">
     { 
       this.state.doctors.map((doctor)=>{
-        return(
-            
+        return(          
              <article class="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
               <img src="https://i2-prod.mirror.co.uk/interactives/article12645227.ece/ALTERNATES/s810/doctor.jpg" class="db w-100 br2 br--top" alt="Photo of a kitten looking menacing."/>
               <div class="pa2 ph3-ns pb3-ns">
@@ -39,7 +38,7 @@ class DoctorCards extends Component {
               <button>
               <a
                       class="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
-                      href="/"
+                      href="/ProfilePage"
                     >
                       Profile
                     </a>

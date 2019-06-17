@@ -13,6 +13,7 @@ import HomeCards from "./Components/Cards/homeCards";
 import About from "./Components/AboutComp/About";
 import Categories from "./Components/Categories/Categories";
 import ProfilePage from "./Components/ProfilePage/Profile";
+import firebase from './Components/firebase/firebase'
 class App extends Component {
   render() {
     return (
