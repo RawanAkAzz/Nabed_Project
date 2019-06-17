@@ -15,7 +15,7 @@ class ProfilePage extends Component {
         url: this.props.url
       });
     }
-    handleChange(e) {
+    onChange(e) {
       if (e.target.files[0]) {
         const image = e.target.files[0];
         this.setState(() => ({ image }));
@@ -37,7 +37,7 @@ class ProfilePage extends Component {
         () => {
           storage.ref('images').child(image.name).getDownloadURL().then((url) => {
             setTimeout(() => {
-              this.setState({ url, progress: 0 }, () => this.props.changeImg(this.state.url));
+              this.setState({ url, progress: 0 }, () => this.props.onChange(this.state.url));
             }, 1000);
           });
         }
@@ -69,7 +69,7 @@ class ProfilePage extends Component {
                 type="file"
                 accept="image/*"
                 data-max-size="5000"
-                onChange={this.handleChange.bind(this)}
+                onChange={this.onChange.bind(this)}
               />
               <label className="custom-file-label" htmlFor="inputGroupFile01" value="">
                 Choose your image
@@ -84,8 +84,8 @@ class ProfilePage extends Component {
                   'https://via.placeholder'
                 }
                 alt="uploaded images"
-                height="90"
-                width="90"
+                height="100"
+                width="100"
               />
             </div>
             <div className="col-sm-4">
@@ -99,6 +99,6 @@ class ProfilePage extends Component {
   }
   
   
-  
   export default ProfilePage;
+  
   
