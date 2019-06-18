@@ -41,8 +41,10 @@ class SignIn extends Component {
      type: 'POST',
      url: 'http://localhost:5001/SignIn',
      data: that.state.states,
-     success: function (data) {
-        alert("Welcome")
+     success: function (response) {
+       if(response === '200'){
+        window.location.replace('/SignIn')
+       }
       console.log("hide")
 
      },

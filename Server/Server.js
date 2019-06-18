@@ -41,7 +41,7 @@ app.post('SignIn', function(req,res){
       if(err){
          return res.send({username:username , password:password});
       } else{
-         return res.status(404).send(); //200 and in the fetch make  if ==200 go to path
+         return res.status(200).send(); //200 and in the fetch make  if ==200 go to path
       }
    })
       console.log(Doctor)
@@ -68,7 +68,7 @@ app.post('/Register', (req , res)=>{
    } );
    
 app.post('/Profile', (req , res)=>{
-   console.log(req.body.name)
+   console.log(req.body.image)
   var image = req.body.image;
    var url = req.body.url;
 

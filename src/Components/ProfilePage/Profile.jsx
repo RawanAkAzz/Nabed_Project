@@ -24,7 +24,7 @@ class ProfilePage extends Component {
   
     onUpload() {
       const { image } = this.state;
-      const upload = storage.ref(`images/${image.name}`).put(image);
+      const upload = storage.ref(`images/${image}`).put(image);
       upload.on(
         'state_changed',
         (snapshot) => {

@@ -5,7 +5,7 @@ const firebaseConfig = {
     authDomain: "nabeedproject.firebaseapp.com",
     databaseURL: "https://nabeedproject.firebaseio.com",
     projectId: "nabeedproject",
-    storageBucket: "",
+    storageBucket: "gs://nabeedproject.appspot.com/",
     messagingSenderId: "404590937675",
     appId: "1:404590937675:web:19add4862b1f92bb"
   };
