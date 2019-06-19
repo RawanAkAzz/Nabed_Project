@@ -9,6 +9,8 @@ class NavBar extends Component {
               href="/"
               className="dib w2 h2 pa1 ba b--black-90 grow-large border-box"
             >
+         
+
               {/* <svg
               class="link black-90 hover-black"
               data-icon="skull"

@@ -13,6 +13,8 @@ import HomeCards from "./Components/Cards/homeCards";
 import About from "./Components/AboutComp/About";
 import Categories from "./Components/Categories/Categories";
 import ProfilePage from "./Components/ProfilePage/Profile";
+import Sugrery from './Components/CategoriesCards/Sugrery';
+import CategoriesCards from "./Components/CategoriesCards/Sugrery";
 import firebase from './Components/firebase/firebase'
 class App extends Component {
   render() {
@@ -27,7 +29,9 @@ class App extends Component {
           <Route exact path="/HomeCards" component={HomeCards} />
           <Route exact path="/about" component={About} />
           <Route excut path="/Categories" component={Categories} />
+          <Route exact path="/CategoriesCards" component={Sugrery} />
           <Route exact path="/ProfilePage" component={ProfilePage} />
+          <Route exact path="/Sugrery" component={Sugrery} />
 
         </Router>
       </div>

@@ -8,9 +8,9 @@ class DoctorCards extends Component {
      doctors:[1,2]
    }
    }
-     componentDidMount(){
+     componentDidMount(){ //is the best place to fetch data
     fetch('http://localhost:5001/Doctors')
-       .then(res => res.json())
+       .then(response => response.json())
        .then(doctors => this.setState({doctors} ));
   }
  render() { 
@@ -32,7 +32,7 @@ class DoctorCards extends Component {
                 </div>
                 <center>
                 <p class="f6 lh-copy measure mt2 mid-gray">
-                Doctor of Dentist </p></center>
+               {doctor.description} </p></center>
               </div>
               <center>
               <button>
