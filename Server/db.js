@@ -16,6 +16,13 @@ let doctorSchema= mongoose.Schema({
     "fbAccount": { type : String , unique : true, required : true }
 });
 
+
+let categorySchema= mongoose.Schema({
+  "name": { type : String , unique : true, required : true },
+   "url": String ,
+  "description":String,
+   });
+ 
 let Doctor = mongoose.model('Doctor', doctorSchema);
 
 let save = (data => {
