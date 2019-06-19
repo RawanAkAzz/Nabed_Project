@@ -29,26 +29,25 @@ render(){
         </div>
         </div>
          <div className="column">
-         <a href="store url=equipment/Department of Neurology}" title="Department of Neurology">
+         <a href="/Neurology" title="Department of Neurology">
           <img src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png" alt="Department of Neurology" width="200" />
          </a>
-          <p className="md-body-1"><a className="l-dark" href="{{store url=equipment/Department of Neurology}}" title="Department of Neurology">Department of Neurology</a></p>
+          <p className="md-body-1"><a className="l-dark" href="/Neurology" title="Department of Neurology">Department of Neurology</a></p>
         </div> 
          <div className="column">
-         <a href="{{store url=equipment/Dental section}}" title="Dental section">
+         <a href="/Dental" title="Dental section">
          <img src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png" alt="Dental section" width="200" />
          </a>
       
-         <p className="md-body-1"><a className="l-dark" href="{{store url=equipment/Dental section}}" title="Dental section"> Dental section</a></p>
+         <p className="md-body-1"><a className="l-dark" href="/Dental" title="Dental section"> Dental section</a></p>
        </div>
          <div className="column">
-         <a href="{{store url=equipment/package-units}}" title="Heart Section
+         <a href="/HeartSection" title="Heart Section
 ">
           <img src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png" alt="Heart Section
 " width="200" />
          </a>
-             <p className="md-body-1"><a className="l-dark" href="{{store url=equipment/package-units}}" title="Heart Section
-">Heart Section
+             <p className="md-body-1"><a className="l-dark" href="/HeartSection" title="HeartSection">Heart Section
 </a></p>
         </div> </div>
         <div className="row">
@@ -79,14 +78,14 @@ render(){
              <p className="md-body-1"><a className="l-dark" href="{{store url=equipment/commercial-condensers}}" title="Commercial Condensers">Commercial Condensers</a></p>
       </a>
          </div></div>
-         <div className="column m-b-large">
+         <div className="col-sm3 m-b-large">
            <a href="{{store url=equipment/iaq-air-cleaners-uv-lights}}" title="IAQ Air Cleaners">
             <img src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png" alt="IAQ Air Cleaners" width="200" />
    
              <p className="md-body-1"><a className="l-dark" href="{{store url=equipment/iaq-air-cleaners-uv-lights}}" title="IAQ Cleaners and UV Lights">IAQ Cleaners and UV Lights</a></p>
    </a>
          </div>
-         <div className="column m-b-large">
+         <div className="col-sm3 m-b-large">
            <a href="{{store url=equipment/refrigeration-evaporators}}" title="Refrigeration Evaporators">
             <img src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png" alt="Refrigeration Evaporators" width="200" />
 
@@ -94,7 +93,7 @@ render(){
            
   </a>
   </div>
-         <div className="column m-b-large">
+         <div className="col-sm3 m-b-large">
            <a href="{{store url=equipment/ptac-units}}" title="PTAC Units">
             <img src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png" alt="PTAC Units" width="200" />
    </a>
@@ -102,7 +101,7 @@ render(){
              <p className="md-body-1"><a className="l-dark" href="{{store url=equipment/ptac-units}}" title="PTAC Units">P-Tac Units</a></p>
          
  
-         <div className="column m-b-large m-b-60">
+         <div className="col-sm3 m-b-large m-b-60">
            <a href="{{store url=equipment/air-handlers-commercial}}">
             <img src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png" alt="Commercial Air Handlers" width="200" />
   </a>
@@ -110,7 +109,7 @@ render(){
     
 </div></center>
 
-    <div className="columns small-12 medium-3 subnav-menu medium-pull-9 m-b-60 col-leftpad--remove">
+    <div className="col-sm3 small-12 medium-3 subnav-menu medium-pull-9 m-b-60 col-leftpad--remove">
        <p className="mdc-headline">Show All Categories</p>
         <ul>
           <li><a href="{{store url=equipment/air-cooled-condensers}}">Air Cooled Condensers</a></li>

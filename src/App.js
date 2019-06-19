@@ -14,7 +14,9 @@ import About from "./Components/AboutComp/About";
 import Categories from "./Components/Categories/Categories";
 import ProfilePage from "./Components/ProfilePage/Profile";
 import Sugrery from './Components/CategoriesCards/Sugrery';
-import CategoriesCards from "./Components/CategoriesCards/Sugrery";
+import Neurology from "./Components/CategoriesCards/Neurology";
+import Dental  from "./Components/CategoriesCards/Dental section";
+import HeartSection from "./Components/CategoriesCards/HeartSection";
 import firebase from './Components/firebase/firebase'
 class App extends Component {
   render() {
@@ -32,7 +34,21 @@ class App extends Component {
           <Route exact path="/CategoriesCards" component={Sugrery} />
           <Route exact path="/ProfilePage" component={ProfilePage} />
           <Route exact path="/Sugrery" component={Sugrery} />
+          <Route exact path="/Neurology" component={Neurology} />
+          <Route exact path="/Dental" component={Dental} />
+          <Route exact path="/HeartSection" component={HeartSection} />
 
+
+
+
+
+
+
+
+
+
+
+          
         </Router>
       </div>
     );
