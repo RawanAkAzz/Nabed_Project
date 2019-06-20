@@ -17,6 +17,10 @@ import Sugrery from './Components/CategoriesCards/Sugrery';
 import Neurology from "./Components/CategoriesCards/Neurology";
 import Dental  from "./Components/CategoriesCards/Dental section";
 import HeartSection from "./Components/CategoriesCards/HeartSection";
+import Laboratory  from "./Components/CategoriesCards/Laboratory Department";
+import Ophthalmology  from "./Components/CategoriesCards/Ophthalmology";
+import  GeneralServices   from "./Components/CategoriesCards/GeneralServices";
+import Healthy  from "./Components/CategoriesCards/Healthy";
 import firebase from './Components/firebase/firebase'
 class App extends Component {
   render() {
@@ -36,17 +40,11 @@ class App extends Component {
           <Route exact path="/Sugrery" component={Sugrery} />
           <Route exact path="/Neurology" component={Neurology} />
           <Route exact path="/Dental" component={Dental} />
-          <Route exact path="/HeartSection" component={HeartSection} />
-
-
-
-
-
-
-
-
-
-
+          <Route exact path="/HeartSection" component={HeartSection} />  
+          <Route exact path="/Laboratory" component={Laboratory} />  
+          <Route exact path="/Ophthalmology" component={Ophthalmology} />  
+          <Route exact path="/GeneralServices" component={GeneralServices} />  
+          <Route exact path="/Healthy" component={Healthy} />  
 
           
         </Router>
