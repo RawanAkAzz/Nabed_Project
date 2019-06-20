@@ -6,7 +6,7 @@ class NavBar extends Component {
         <nav className="dt w-100 mw8 center">
           <div className="dtc w2 v-mid pa3">
             <a
-              href="/"
+              // href="/"
               className="dib w2 h2 pa1 ba b--black-90 grow-large border-box"
             >
          
