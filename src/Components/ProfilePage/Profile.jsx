@@ -35,11 +35,11 @@ class ProfilePage extends Component {
           console.log(error);
         },
         () => {
-          storage.ref('images').child(image.name).getDownloadURL().then((url) => {
-            setTimeout(() => {
-              this.setState({ url, progress: 0 }, () => this.props.onChange(this.state.url));
-            }, 1000);
-          });
+          // storage.ref('images').child(image.name).getDownloadURL().then((url) => {
+          //   setTimeout(() => {
+          //     this.setState({ url, progress: 0 }, () => this.props.onChange(this.state.url));
+          //   }, 1000);
+          // });
         }
       );
     }

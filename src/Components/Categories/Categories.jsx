@@ -10,16 +10,22 @@ class Categories extends Component {
      }
    }
 render(){
-
+ const style = {
+  display: 'flex',
+  flexWrap: 'wrap', 
+  marginTop: '12%',
+  marginRight: '-15px',
+  justifyContent: 'center',
+  marginLeft: '-15px'
+ }
   return(
     <div>
       <div><center>
       <h2 className="md-display-1 inverse center">Categories</h2></center></div>
 
-  
 
    <center>
-      <div className="row">
+      <div className="row" style={style}>
       <div className="col-sm-3 small-up-1 medium-up-3 large-up-4 image-grid m-b-30">
          <div className="column">
           <a href="/Sugrery" title="Department of Surgery">
@@ -50,7 +56,7 @@ render(){
              <p className="md-body-1"><a className="l-dark" href="/HeartSection" title="HeartSection">Heart Section
 </a></p>
         </div> </div>
-        <div className="row">
+        <div className="row" style={style} >
          <div className="col-sm3 m-b-large" width="200">
            <a href="/Laboratory" title="Laboratory Department">
             <img src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png" alt="Laboratory Department" width="200" />
@@ -83,7 +89,7 @@ render(){
         
          </center>
 
-    <div className="col-sm3 small-12 medium-3 subnav-menu medium-pull-9 m-b-60 col-leftpad--remove">
+    {/* <div className="col-sm3 small-12 medium-3 subnav-menu medium-pull-9 m-b-60 col-leftpad--remove">
        <p className="mdc-headline">Show All Categories</p>
         <ul>
           <li><a href="{{store url=equipment/air-cooled-condensers}}">Air Cooled Condensers</a></li>
@@ -128,7 +134,7 @@ render(){
  
 </ul>
  
- </div>
+ </div> */}
  </div>
 )    
   }
