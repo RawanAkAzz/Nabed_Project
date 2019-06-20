@@ -6,11 +6,9 @@ class NavBar extends Component {
         <nav className="dt w-100 mw8 center">
           <div className="dtc w2 v-mid pa3">
             <a
-              // href="/"
+              href="/"
               className="dib w2 h2 pa1 ba b--black-90 grow-large border-box"
             >
-         
-
               {/* <svg
               class="link black-90 hover-black"
               data-icon="skull"
@@ -48,7 +46,7 @@ class NavBar extends Component {
             >
               LogIn
             </a>
-            
+
             {/* <a
               className="f6 fw4 hover-black no-underline black-70 dib ml2 pv2 ph3 ba"
               href="/doctorCards"
