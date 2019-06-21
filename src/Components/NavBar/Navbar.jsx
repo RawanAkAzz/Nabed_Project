@@ -27,12 +27,7 @@ class NavBar extends Component {
             >
               Categories
             </a>
-            <a
-              className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
-              href="/DoctorCards"
-            >
-              Doctors
-            </a>
+
             <a
               className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
               href="/about"

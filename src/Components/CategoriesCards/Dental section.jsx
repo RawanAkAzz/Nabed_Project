@@ -1,14 +1,12 @@
-import React , {Component} from "react";
-
-class Dental extends Component{
-     render(){
-         return(
-
-          <div>
-              About Dental
-          </div>
-
-         )
-     }
+import React, { Component } from "react";
+import DoctorCards from "../Cards/doctorCards";
+class Dental extends Component {
+  render() {
+    return (
+      <div>
+        <DoctorCards />
+      </div>
+    );
+  }
 }
-export default Dental ;
+export default Dental;
