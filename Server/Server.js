@@ -5,7 +5,7 @@ const {
   HTTP_UNAUTHORIZED,
   HTTP_BAD_REQUEST,
   HTTP_SERVER_ERROR
-} = require("./constants.js");
+} = require("./Https.js");
 
 const db = require("./db.js");
 const app = express();
@@ -79,18 +79,21 @@ app.post("/Register", (req, res) => {
 
   console.log(req.body);
 
-  const firstName = req.body.firstName;
-  const lastName = req.body.lastName;
-  const email = req.body.email;
-  const password = req.body.password;
+  var name = req.body.name
+   var password = req.body.password
+    var phoneNumber = req.body.phoneNumber
+    var description = req.body.description
+    var  Location = req.body.Location
+    var fbAccount = req.body.fbAccount
 
   const hashedPassword = bcrypt.hashSync(password, 10);
   doctorSchema
     .create({
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: hashedPassword
+      name: name,
+      password: hashedPassword,
+      phoneNumber: phoneNumber,
+      description: description,
+      Location:Location
     })
     .then(function() {
       return res.status(HTTP_CREATED).send("Sign Up Successfull");

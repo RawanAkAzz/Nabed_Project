@@ -163,6 +163,12 @@ class Register extends Component {
                   type="password"
                   validate
                 />
+             <MDBInput label="Your phoneNumber" group type="number" />
+             <MDBInput label="Your Location" group type="text"  />
+             <MDBInput label="Your description" group type="text" />
+             <textarea id="questionnaire" name="content" cols="30" rows="10"></textarea>
+
+
                 <div className="md-form pb-3">
                   <div className="form-check my-4">
                     <input
