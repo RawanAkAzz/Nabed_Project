@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import $ from "jquery";
-import { Link } from "react-router-dom";
 import {
   MDBContainer,
   MDBRow,
@@ -156,6 +155,7 @@ class Register extends Component {
                     <strong>Sign up</strong>
                   </h3>
                 </div>
+                <MDBInput label="Your name" group type="text" validate />
                 <MDBInput label="Your email" group type="text" validate />
                 <MDBInput
                   label="Your password"
@@ -190,7 +190,7 @@ class Register extends Component {
                       type="button"
                       className="btn btn-pink btn-block btn-rounded z-depth-1"
                     >
-                      <a href="/doctorCards" className="blue-text ml-1">
+                      <a href="/signIn" className="blue-text ml-1">
                         Sign up
                       </a>
                     </button>

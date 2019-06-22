@@ -43,14 +43,15 @@ app.get("/Doctors", (req, res) => {
 app.get("SignIn");
 
 app.post("SignIn", function(req, res) {
-  var username = req.body.username;
+  var email = req.body.email;
   var password = req.body.password;
-  db.Doctor.findOne({ username: username, password: password }, function(
+  db.Doctor.findOne({ email: email, password: password }, function(
     err,
-    db
+    
   ) {
     if (err) {
-      return res.send({ username: username, password: password });
+      console.log(email)
+      return res.send({ email: email, password: password });
     } else {
       return res.status(200).send(); //200 and in the fetch make  if ==200 go to path
     }
@@ -60,51 +61,51 @@ app.post("SignIn", function(req, res) {
 });
 
 app.post("/Register", (req, res) => {
-  //    console.log(req.body.name)
-  //   var name = req.body.name
-  //    var password = req.body.password
-  //   var phoneNumber = req.body.phoneNumber
-  //   var description = req.body.description
-  //   var  Location = req.body.Location
-  //   var fbAccount = req.body.fbAccount
-
-  //    db.Doctor.create({name: name ,password:password,phoneNumber:phoneNumber, description
-  //       : description ,Location:Location , fbAccount: fbAccount})
-  //          .then(function(doctor){
-  //          res.send(doctor)
-  //          })
-  //          .catch(function(err){
-  //             return res.status(404).send(err.message);
-  //         })
-
-  console.log(req.body);
-
-  var name = req.body.name
-   var password = req.body.password
+     console.log(req.body.name)
+    var name = req.body.name
+     var password = req.body.password
     var phoneNumber = req.body.phoneNumber
     var description = req.body.description
     var  Location = req.body.Location
     var fbAccount = req.body.fbAccount
 
-  const hashedPassword = bcrypt.hashSync(password, 10);
-  doctorSchema
-    .create({
-      name: name,
-      password: hashedPassword,
-      phoneNumber: phoneNumber,
-      description: description,
-      Location:Location
-    })
-    .then(function() {
-      return res.status(HTTP_CREATED).send("Sign Up Successfull");
-    })
-    .catch(function(err) {
-      if (err.code === 11000) {
-        res.status(HTTP_BAD_REQUEST).send("This username is already taken");
-      }
-      return res.status(HTTP_SERVER_ERROR).send("Server Error");
-    });
+     db.Doctor.create({name: name ,password:password,phoneNumber:phoneNumber, description
+        : description ,Location:Location , fbAccount: fbAccount})
+           .then(function(doctor){
+           res.send(doctor)
+           })
+           .catch(function(err){
+              return res.status(404).send(err.message);
+          })
 
+  // console.log(req.body);
+
+  // var name = req.body.name
+  //  var password = req.body.password
+  //   var phoneNumber = req.body.phoneNumber
+  //   var description = req.body.description
+  //   var  Location = req.body.Location
+  //   var fbAccount = req.body.fbAccount
+
+  // const hashedPassword = bcrypt.hashSync(password, 10);
+  // doctorSchema
+  //   .create({
+  //     name: name,
+  //     password: hashedPassword,
+  //     phoneNumber: phoneNumber,
+  //     description: description,
+  //     Location:Location
+  //   })
+  //   .then(function() {
+  //     return res.status(HTTP_CREATED).send("Sign Up Successfull");
+  //   })
+  //   .catch(function(err) {
+  //     if (err.code === 11000) {
+  //       res.status(HTTP_BAD_REQUEST).send("This username is already taken");
+  //     }
+  //     return res.status(HTTP_SERVER_ERROR).send("Server Error");
+  //   });
+  console.log(req.body)
   res.send("Hello World");
 });
 

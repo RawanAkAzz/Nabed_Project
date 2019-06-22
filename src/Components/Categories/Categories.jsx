@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import Image from "../Image/Image"
-import { MDBBtn, MDBCard, MDBCardImage, MDBRow } from "mdbreact";
+import { MDBCard, MDBCardImage, MDBRow } from "mdbreact";
 
 class Categories extends Component {
   constructor(props) {

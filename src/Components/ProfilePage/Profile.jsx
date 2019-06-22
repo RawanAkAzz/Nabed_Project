@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { storage } from "../firebase/firebase";
+import { MDBInput } from "mdbreact";
+
 
 class ProfilePage extends Component {
      constructor(props){
-      super(props);
+     super(props);
       this.state = {
         image: null,
         url: '',
@@ -47,58 +49,54 @@ class ProfilePage extends Component {
     render() {
       const style = {
         float: 'left',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center'
+       // display: 'flex',
+        //alignItems: 'center',
+        justifyContent: 'left'
       };
+      // const style = {
+      //   float: 'left',
+      //   display: 'flex',
+      //   alignItems: 'center',
+      //   justifyContent: 'left'
+      // };
   
       return (
-        <div>
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <button type="button" id="inputGroupFileAddon01" onClick={this.onUpload.bind(this)}>
-                Upload Photo
-              </button>
-            </div>
-            <div className="custom-file">
-              <input
-                className="custom-file-input"
-                id="inputGroupFile01"
-                aria-describedby="inputGroupFileAddon01"
-                type="file"
-                accept="image/*"
-                data-max-size="5000"
-                onChange={this.onChange.bind(this)}
-              />
-              <label className="custom-file-label" htmlFor="inputGroupFile01" value="">
-                Choose your image
-              </label>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-4">
-              <img
-                src={
-                  this.props.url ||
-                  'https://via.placeholder'
-                }
-                alt="uploaded images"
-                height="100"
-                width="100"
-              />
-            </div>
-            <div className="col-sm-4">
-              <progress value={this.state.progress} max="100" />
-            </div>
-            <div className="col-sm-4" />
-          </div>
-        </div>
-      );
-    }
+     
+      //    <div className="left" style ={style}>
+      //   <progress value ={this.state.progress} max ="100"/>
+      //       <input type="file" onChange = {this.onChange}/>
+      //         <button onUpload= {this.onUpload} type="button">
+      //           Upload Photo
+      //         </button>
+      //       <img src = {this.state.url || 'https://via.placeholder'
+      //   }  height = "200" width = "200" />
+      //  </div> 
+      <div className="form-row mb-3 col-auto mb-6">
+      <div className="input-group">
+      <div className="input-group-prepend">
+        <span className="input-group-text" id="basic-addon">
+          <i className="fa fa-user prefix"></i>
+        </span>
+      </div>
+      <input type="text" className="form-control" placeholder="Username" aria-label="Username"  />
+
+    </div>
+          <MDBInput label="E-mail address" background icon="envelope" > </MDBInput>
+
+ </div>
+    
+    
+  
+    
+      ); 
+       
+
+  }
   }
   
   
   export default ProfilePage;
   
   
+
+ 

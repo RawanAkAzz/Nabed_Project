@@ -5,7 +5,13 @@ class DoctorCards extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      doctors: [1]
+      doctors: [{
+      name:"Dr.Khalid",
+      email  : "khaledahmad@life.org"
+      },{
+       name:"Dr.Ali",
+       email : "ali.ammmar@life.org"
+      }]
     };
   }
   componentDidMount() {
@@ -13,31 +19,32 @@ class DoctorCards extends Component {
     fetch("http://localhost:5001/Doctors")
       .then(response => response.json())
       .then(doctors => this.setState({ doctors }));
-  }
+      
+    }
   render() {
     return (
       <div className="form-style-7">
         {this.state.doctors.map(doctor => {
           return (
-            <article class="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
+            <article className="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
               <img
                 src="https://i2-prod.mirror.co.uk/interactives/article12645227.ece/ALTERNATES/s810/doctor.jpg"
-                class="db w-100 br2 br--top"
-                alt="Photo of a kitten looking menacing."
+                className="db w-100 br2 br--top"
+                alt="Photo menacing."
               />
-              <div class="pa2 ph3-ns pb3-ns">
-                <div class="dt w-100 mt1">
+              <div className="pa2 ph3-ns pb3-ns">
+                <div className="dt w-100 mt1">
                   <center>
-                    <div class="dtc">
-                      <button type="button" class="btn btn-primary">
-                        Primary
-                      </button>
-                      <h1 class="f5 f4-ns mv0">{doctor.name}</h1>
+                    <div className="dtc">
+                   
+                      <h1 className="f5 f4-ns mv0 ">{doctor.name}</h1> <br></br>
+                      <h1 className="f5 f4-ns mv0">{doctor.email}</h1>
+
                     </div>
                   </center>
                 </div>
                 <center>
-                  <p class="f6 lh-copy measure mt2 mid-gray">
+                  <p className="f6 lh-copy measure mt2 mid-gray">
                     {doctor.description}{" "}
                   </p>
                 </center>
@@ -45,7 +52,7 @@ class DoctorCards extends Component {
               <center>
                 <button>
                   <a
-                    class="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
+                    className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
                     href="/ProfilePage"
                   >
                     Profile
