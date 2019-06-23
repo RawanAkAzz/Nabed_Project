@@ -67,12 +67,12 @@ app.post("/Register", (req, res) => {
     var email=req.body.email
      var password = req.body.password
     var phoneNumber = req.body.phoneNumber
-    var description = req.body.description
+    var specialty = req.body.specialty
     var  Location = req.body.Location
   
 
-     db.Doctor.create({name: name ,email:email,password:password,phoneNumber:phoneNumber, description
-        : description ,Location:Location })
+     db.Doctor.create({name: name ,email:email,password:password,phoneNumber:phoneNumber, specialty
+        : specialty ,Location:Location })
            .then(function(doctor){
            res.send(doctor)
            })
@@ -85,7 +85,7 @@ app.post("/Register", (req, res) => {
   // var name = req.body.name
   //  var password = req.body.password
   //   var phoneNumber = req.body.phoneNumber
-  //   var description = req.body.description
+  //   var specialty = req.body.specialty
   //   var  Location = req.body.Location
   //   var fbAccount = req.body.fbAccount
 
@@ -95,7 +95,7 @@ app.post("/Register", (req, res) => {
   //     name: name,
   //     password: hashedPassword,
   //     phoneNumber: phoneNumber,
-  //     description: description,
+  //     specialty: specialty,
   //     Location:Location
   //   })
   //   .then(function() {
@@ -115,12 +115,12 @@ app.post("/Profile", (req, res) => {
   console.log(req.body.image); 
   var name = req.body.name
  var phoneNumber = req.body.phoneNumber
- var description = req.body.description
+ var specialty = req.body.specialty
  var  Location = req.body.Location
   var image = req.body.image;
   var url = req.body.url;
-  db.Doctor.create({name: name ,phoneNumber:phoneNumber, description
-    : description ,Location:Location  })
+  db.Doctor.create({name: name ,phoneNumber:phoneNumber, specialty
+    : specialty ,Location:Location  })
        .then(function(user){
        res.send(user)
        console.log(user

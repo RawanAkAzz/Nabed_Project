@@ -12,7 +12,7 @@ let doctorSchema= mongoose.Schema({
     "email": { type : String , unique : true, required : true },
     "password":{ type : String , unique : true, required : true },
     "phoneNumber": { type : String , unique : true, required : true },
-    "description":String,
+    "specialty":String,
     "Location":String
 });
 
@@ -20,7 +20,7 @@ let doctorSchema= mongoose.Schema({
 let categorySchema= mongoose.Schema({
   "name": { type : String , unique : true, required : true },
    "url": String ,
-  "description":String,
+  "specialty":String,
    });
  
 let Doctor = mongoose.model('Doctor', doctorSchema);
@@ -32,7 +32,7 @@ let save = (data => {
     for (var i = 0 ; i < data.length ; i++){
       var obj = {
         name:data[i].name,
-        description:data[i].description,
+        specialty:data[i].specialty,
    
   
   }

@@ -18,7 +18,7 @@ class Register extends Component {
        email: "", 
        password: "",
         phoneNumber: "",
-        description: "",
+        specialty: "",
         Location: "",
          fbAccount: ""
       }
@@ -180,7 +180,7 @@ class Register extends Component {
               />
              <MDBInput label="Your Location" id = "location"  group type="text"   onChange={this.onChange}
 />
-             <MDBInput label="Your description" id = "description"  group type="text"   onChange={this.onChange}
+             <MDBInput label="Your specialty" id = "specialty"  group type="text"   onChange={this.onChange}
  />
              <textarea id="questionnaire" id="name" cols="30" rows="10"></textarea>
 

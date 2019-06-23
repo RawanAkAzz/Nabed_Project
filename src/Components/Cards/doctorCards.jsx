@@ -45,7 +45,7 @@ class DoctorCards extends Component {
                 </div>
                 <center>
                   <p className="f6 lh-copy measure mt2 mid-gray">
-                    {doctor.description}{" "}
+                    {doctor.specialty}{" "}
                   </p>
                 </center>
               </div>

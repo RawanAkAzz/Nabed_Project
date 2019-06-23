@@ -14,7 +14,7 @@ class ProfilePage extends Component {
         url: '',
         progress: 0,
         name: "ali",
-        description: "jdfd sifg ",
+        specialty: "jdfd sifg ",
         email: "hngfh",
         phoneNumber: "079723456235",
         Location: "amman"
@@ -25,7 +25,7 @@ class ProfilePage extends Component {
           progress: 0,
           name: "gtwetb ht",
           fbAccount: "tb ny",
-          description: "dft",
+          specialty: "dft",
           email: "fd bh",
           phoneNumber: "07864523553",
           Location: "arbed"
@@ -85,7 +85,7 @@ class ProfilePage extends Component {
               <i className="fa fa-user prefix"></i>
             </span>
           </div>
-          <h1 type="text" className="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon" ></h1>
+          <input label="text" className="form-control" placeholder="Your E-mail" aria-label="email" aria-describedby="basic-addon" ></input>
         </div>
         <div className="input-group">
           <div className="input-group-prepend">
@@ -95,6 +95,9 @@ class ProfilePage extends Component {
           </div>
           {/* <h1 type="text" className="form-control" placeholder="name" aria-label="name" aria-describedby="basic-addon" >{user.name}</h1> */}
           <MDBInput label="E-mail address" outline icon="envelope" />
+        </div>
+        <div>
+        <MDBInput label="password" outline icon="envelope" />
 
         </div>
      </div>
