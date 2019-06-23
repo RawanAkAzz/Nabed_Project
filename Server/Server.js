@@ -42,7 +42,8 @@ app.get("/Doctors", (req, res) => {
 
 app.get("SignIn");
 
-app.post("SignIn", function(req, res) {
+app.post("/SignIn", function(req, res) {
+  console.log(req.body.email)
   var email = req.body.email;
   var password = req.body.password;
   db.Doctor.findOne({ email: email, password: password }, function(
@@ -51,26 +52,27 @@ app.post("SignIn", function(req, res) {
   ) {
     if (err) {
       console.log(email)
-      return res.send({ email: email, password: password });
+      return res.status(404).send(err)
     } else {
-      return res.status(200).send(); //200 and in the fetch make  if ==200 go to path
+      return res.status(200).send("hi"); //200 and in the fetch make  if ==200 go to path
     }
   });
 
-  res.send({ username: username, password: password });
+  res.send({ email: email, password: password });
 });
 
 app.post("/Register", (req, res) => {
-     console.log(req.body.name)
+     console.log(req.body)
     var name = req.body.name
+    var email=req.body.email
      var password = req.body.password
     var phoneNumber = req.body.phoneNumber
     var description = req.body.description
     var  Location = req.body.Location
-    var fbAccount = req.body.fbAccount
+  
 
-     db.Doctor.create({name: name ,password:password,phoneNumber:phoneNumber, description
-        : description ,Location:Location , fbAccount: fbAccount})
+     db.Doctor.create({name: name ,email:email,password:password,phoneNumber:phoneNumber, description
+        : description ,Location:Location })
            .then(function(doctor){
            res.send(doctor)
            })
@@ -105,24 +107,29 @@ app.post("/Register", (req, res) => {
   //     }
   //     return res.status(HTTP_SERVER_ERROR).send("Server Error");
   //   });
-  console.log(req.body)
-  res.send("Hello World");
+  // console.log(req.body)
+  // res.send("Hello World");
 });
 
 app.post("/Profile", (req, res) => {
-  console.log(req.body.image);
+  console.log(req.body.image); 
+  var name = req.body.name
+ var phoneNumber = req.body.phoneNumber
+ var description = req.body.description
+ var  Location = req.body.Location
   var image = req.body.image;
   var url = req.body.url;
-
-  db.Doctor.create(
-    { image: image, url: url }
-      .then(function(doctor) {
-        res.send(doctor);
+  db.Doctor.create({name: name ,phoneNumber:phoneNumber, description
+    : description ,Location:Location  })
+       .then(function(user){
+       res.send(user)
+       console.log(user
+        )
+       })
+       .catch(function(err){
+          return res.status(404).send(err.message);
       })
-      .catch(function(err) {
-        return res.status(404).send(err.message);
-      })
-  );
-  const port = 5001;
-  app.listen(port, () => console.log(`listening on port ${port}`));
+  
 });
+const port = 5001;
+  app.listen(port, () => console.log(`listening on port ${port}`));

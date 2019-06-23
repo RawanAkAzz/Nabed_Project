@@ -14,7 +14,7 @@ class Categories extends Component {
       <React.Fragment>
         <div>
           <center>
-            <h2 className="md-display-1 inverse center">Categories</h2>
+            <h2 className="md-display-1 inverse center">Department</h2>
           </center>
         </div>
         <div className="d-flex justify-content-center mt-5">

@@ -18,46 +18,45 @@ class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      states: {
         email: "",
         password: ""
-      }
+      
     };
-    this.onChange = this.onChange.bind(this);
-    this.onClick = this.onClick.bind(this);
+
   }
 
-  onChange(e) {
-    var states = this.state.states;
-    var email = e.target.id;
-    var value = e.target.value;
-    //    console.log(email)
-    if ((states[email] = value)) {
-      this.setState({ states: states });
-      console.log(this.state.states);
-    } else {
-      alert("rawan");
-    }
+  onChangeemail(e) {
+   this.setState({
+     email:e.target.value
+   } ,()=> console.log(this.state) 
+ )
+  }
+  onChangepass(e) {
+    this.setState({
+      password:e.target.value
+    } ,()=> console.log(this.state) 
+  )
   }
   onClick(event) {
     event.preventDefault();
 
-    console.log(this.state.states);
+     console.log(this.state)
     var that = this;
     $.ajax({
       type: "POST",
       url: "http://localhost:5001/SignIn",
-      data: that.state.states,
-      success: function(response) {
-        if (response === "200") {
-          window.location.replace("/SignIn");
-        }
-        console.log("hide");
+      body: JSON.stringify(that.state),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+      ,
+      success: function(body) {
+        alert("the Name is already used");
+        // console.log("hide");
       },
       error: function(request, status, error) {}
     });
   }
-
   render() {
     return (
       <MDBContainer className="d-flex justify-content-center mt-5">
@@ -78,7 +77,9 @@ class SignIn extends Component {
                   error="wrong"
                   success="right"
                   id="email"
-                  onChange={this.onChange}
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.onChangeemail.bind(this)}
                 />
                 <MDBInput
                   label="Your password"
@@ -87,7 +88,9 @@ class SignIn extends Component {
                   validate
                   containerClass="mb-0"
                   id="password"
-                  onChange={this.onChange}
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.onChangepass.bind(this)}
                 />
 
                 <div className="text-center mb-3">
@@ -98,9 +101,9 @@ class SignIn extends Component {
                     className="btn-block z-depth-1a"
                     onClick={this.onClick}
                   >
-                    <Link to="/doctorCards" style={{ color: "white" }}>
+                    {/* <Link to="/ProfilePage" style={{ color: "white" }}>
                       SignIn
-                    </Link>
+                    </Link> */}
                   </MDBBtn>
                 </div>
                 <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">

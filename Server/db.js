@@ -9,11 +9,11 @@ db.once('open', function() {
 
 let doctorSchema= mongoose.Schema({
     "name": { type : String , unique : true, required : true },
-     "password":{ type : String , unique : true, required : true },
+    "email": { type : String , unique : true, required : true },
+    "password":{ type : String , unique : true, required : true },
     "phoneNumber": { type : String , unique : true, required : true },
     "description":String,
-    "Location":String,
-    "fbAccount": { type : String , unique : true, required : true }
+    "Location":String
 });
 
 

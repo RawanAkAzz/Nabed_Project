@@ -15,12 +15,12 @@ class Register extends Component {
     this.state = {
       states: {
         name: "",
-        fbAccount: "",
-        description: "",
-        email: "",
+       email: "", 
+       password: "",
         phoneNumber: "",
+        description: "",
         Location: "",
-        password: ""
+         fbAccount: ""
       }
     };
     this.onChange = this.onChange.bind(this);
@@ -36,14 +36,21 @@ class Register extends Component {
     var states = this.state.states;
     var name = e.target.id;
     var value = e.target.value;
-    states[name] = value;
-    this.setState({ states: states });
-    console.log(this.state.states);
+    // var name = this.state.states;
+    // var value = e.target.value;
+       //console.log(name , value)
+   states[name] = value;
+    
+      this.setState({ states: states });
+    // console.log(this.state.states);
+    
   }
+ 
+
   onClick(event) {
     event.preventDefault();
 
-    //console.log(this.state.states)
+    console.log(this.state.states)
     var that = this;
     $.ajax({
       type: "POST",
@@ -155,21 +162,30 @@ class Register extends Component {
                     <strong>Sign up</strong>
                   </h3>
                 </div>
-                <MDBInput label="Your name" group type="text" validate />
-                <MDBInput label="Your email" group type="text" validate />
-                <MDBInput
+                <MDBInput label="Your name" id = "name" group type="text"   onChange={this.onChange}
+ validate />
+                <MDBInput id = "email" label="Your email" group type="text" onChange={this.onChange}
+ validate />
+                 <MDBInput
                   label="Your password"
                   group
                   type="password"
                   validate
+                  containerClass="mb-0"
+                  id="password"
+                  onChange={this.onChange}
                 />
-             <MDBInput label="Your phoneNumber" group type="number" />
-             <MDBInput label="Your Location" group type="text"  />
-             <MDBInput label="Your description" group type="text" />
-             <textarea id="questionnaire" name="content" cols="30" rows="10"></textarea>
+             <MDBInput label="Your phoneNumber" id="phoneNumber" group type="number"  onChange={this.onChange}
+              onChange={this.onChange}
+              />
+             <MDBInput label="Your Location" id = "location"  group type="text"   onChange={this.onChange}
+/>
+             <MDBInput label="Your description" id = "description"  group type="text"   onChange={this.onChange}
+ />
+             <textarea id="questionnaire" id="name" cols="30" rows="10"></textarea>
 
 
-                <div className="md-form pb-3">
+                {/* <div className="md-form pb-3">
                   <div className="form-check my-4">
                     <input
                       className="form-check-input"
@@ -183,17 +199,18 @@ class Register extends Component {
                       </a>
                     </label>
                   </div>
-                </div>
+                </div> */}
                 <MDBRow className="d-flex align-items-center mb-4">
                   <MDBCol md="6" className="text-center">
-                    <button
+                    {/* <button
                       type="button"
                       className="btn btn-pink btn-block btn-rounded z-depth-1"
-                    >
+                      // onClick={(event) => this.onClick(event)}
+                 > */}
                       <a href="/signIn" className="blue-text ml-1">
                         Sign up
                       </a>
-                    </button>
+                    {/* </button> */}
                   </MDBCol>
                   <MDBCol md="6">
                     <p className="font-small grey-text d-flex justify-content-end">
