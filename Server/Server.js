@@ -118,9 +118,15 @@ app.post("/Profile", (req, res) => {
  var specialty = req.body.specialty
  var  Location = req.body.Location
   var url = req.body.url;
-  db.Doctor.create({name: name ,phoneNumber:phoneNumber, specialty
-    : specialty,url:url,Location:Location  })
-       .then(function(user){
+  db.Doctor.findOneAndUpdate(
+  
+    {
+      name: name ,
+      phoneNumber:phoneNumber, 
+      specialty : specialty,
+         url:url,
+    Location:Location 
+   }).then(function(user){
        res.send(user)
        console.log(user
         )
