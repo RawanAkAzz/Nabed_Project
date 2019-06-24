@@ -20,6 +20,7 @@ import HeartSection from "./Components/CategoriesCards/HeartSection";
 import Laboratory from "./Components/CategoriesCards/Laboratory Department";
 import Ophthalmology from "./Components/CategoriesCards/Ophthalmology";
 import GeneralServices from "./Components/CategoriesCards/GeneralServices";
+import imageUpload from "./Components/imageUpload";
 import Healthy from "./Components/CategoriesCards/Healthy";
 import firebase from "./Components/firebase/firebase";
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
           <Route exact path="/Ophthalmology" component={Ophthalmology} />
           <Route exact path="/GeneralServices" component={GeneralServices} />
           <Route exact path="/Healthy" component={Healthy} />
+          <Route exact path="/imageUpload" component={imageUpload} />
           <Route exact path="/firebase" component={firebase} />
         </Router>
       </div>

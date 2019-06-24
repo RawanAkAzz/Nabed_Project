@@ -117,10 +117,9 @@ app.post("/Profile", (req, res) => {
  var phoneNumber = req.body.phoneNumber
  var specialty = req.body.specialty
  var  Location = req.body.Location
-  var image = req.body.image;
   var url = req.body.url;
   db.Doctor.create({name: name ,phoneNumber:phoneNumber, specialty
-    : specialty ,Location:Location  })
+    : specialty,url:url,Location:Location  })
        .then(function(user){
        res.send(user)
        console.log(user
