@@ -160,27 +160,22 @@ app.get("/Profile", (req, res) => {
   db.Doctor.findOne({name: name})
        .then(function(data){
        res.send(data)
-      //  console.log(user)
-       if (err) {
-        // console.error(err);
-        res.status(500).json({
-          error: "Internal error please try again"
-        });
-      } else if (!data) {
-        res.status(401).json({
-          error: "Incorrect username or password"
-        });
-      } else {
-        // console.log(user)
-        res.sendStatus(data);
-      }
+        console.log(res.data)
+      //  if (err) {
+      //   // console.error(err);
+      //   res.status(500).json({
+      //     error: "Internal error please try again"
+      //   });
+      // } else if (!data) {
+      //   res.status(401).json({
+      //     error: "Incorrect username or password"
+      //   });
+      // } else {
+      //   // console.log(user)
+      //   res.sendStatus(data);
+      // }
        })
-       .catch(function(err){
-          return res.status(404).send(err.message);
-      }).then(()=>{
-        console.log("ds")
-      })
-  
+
 });
 const port = 5001;
   app.listen(port, () => console.log(`listening on port ${port}`));
