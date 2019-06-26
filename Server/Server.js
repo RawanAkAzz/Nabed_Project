@@ -39,23 +39,31 @@ app.get("/Doctors", (req, res) => {
     });
 });
 
-app.get("SignIn");
+// app.get("SignIn");
 
 app.post("/SignIn", function(req, res) {
   console.log(req.body.email)
   var email = req.body.email;
   var password = req.body.password;
-  db.Doctor.findOne({ email: email, password: password }, function(
-    err, ) {
+  db.Doctor.findOne({ email: email , password:password}, function( err ,
+    data ) {
     if (err) {
-      console.log(email)
-     res.status(404).send(err)
+      res.status(500).json({
+        error: "Internal error please try again"
+      });
+      // if the user name is ronge return this error
+    } else if (!data) {
+      res.status(401).json({
+        error: "Incorrect username or password"
+      });
+      //else match this 200 with frontend and enter the page
     } else {
-      res.status(200).send("hi"); //200 and in the fetch make  if ==200 go to path
+      // console.log(user)
+      res.sendStatus(200);
     }
   });
 
-  res.send({ email: email, password: password });
+ 
 });
 // if (!user) {
 //   res.status(401).json({
