@@ -45,26 +45,48 @@ app.post("/SignIn", function(req, res) {
   console.log(req.body.email)
   var email = req.body.email;
   var password = req.body.password;
-  db.Doctor.findOne({ email: email , password:password}, function( err ,
-    data ) {
-    if (err) {
-      res.status(500).json({
-        error: "Internal error please try again"
-      });
-      // if the user name is ronge return this error
-    } else if (!data) {
-      res.status(401).json({
-        error: "Incorrect username or password"
-      });
-      //else match this 200 with frontend and enter the page
-    } else {
-      // console.log(user)
-      res.sendStatus(200);
-    }
-  });
+//   db.Doctor.findOne({ email: email , password:password}.then(function(doctor){
+//     res.send(doctor)
+//     })
+//     .catch(function(err){
+//        return res.status(404).send(err.message);
+// })
+    // function( err ,
+  //  data ) {
+    // if (err) {
+    //   res.status(500).json({
+    //     error: "Internal error please try again"
+    //   });
+    //   // if the user name is ronge return this error
+    // } else if (!data) {
+    //   res.status(401).json({
+    //     error: "Incorrect username or password"
+    //   });
+    //   //else match this 200 with frontend and enter the page
+    // } else {
+    //   console.log(data+"dad")
+    //   res.send(data.json());
+    // }
+  //});
 
- 
-});
+  db.Doctor.findOne({email:email,password:password
+   })
+       .then(function(doctor){
+         if(doctor){
+          return res.send(doctor);
+         } else {
+          res.status(401).json({
+                error: "Incorrect username or password"
+              });
+         }
+
+       
+       })
+       .catch(function(err){
+          return res.status(404).send(err.message);
+      })
+    })
+
 // if (!user) {
 //   res.status(401).json({
 //     error: "Incorrect username or password"
@@ -126,35 +148,37 @@ app.post("/Register", (req, res) => {
   // console.log(req.body)
   // res.send("Hello World");
 });
-app.post("/Profile", (req, res) => {
+
+app.get("/Profile", (req, res) => {
   console.log(req.body.image); 
   var name = req.body.name
- var phoneNumber = req.body.phoneNumber
- var specialty = req.body.specialty
- var  Location = req.body.Location
-  var image = req.body.image;
-  var url = req.body.url;
-  db.Doctor.findOne({name: name ,phoneNumber:phoneNumber, specialty
-    : specialty ,Location:Location , url :url})
-       .then(function(user){
-      //  res.send(user)
+//  var phoneNumber = req.body.phoneNumber
+//  var specialty = req.body.specialty
+//  var  Location = req.body.Location
+//   var image = req.body.image;
+//   var url = req.body.url;
+  db.Doctor.findOne({name: name})
+       .then(function(data){
+       res.send(data)
       //  console.log(user)
        if (err) {
         // console.error(err);
         res.status(500).json({
           error: "Internal error please try again"
         });
-      } else if (!user) {
+      } else if (!data) {
         res.status(401).json({
           error: "Incorrect username or password"
         });
       } else {
         // console.log(user)
-        res.sendStatus(200);
+        res.sendStatus(data);
       }
        })
        .catch(function(err){
           return res.status(404).send(err.message);
+      }).then(()=>{
+        console.log("ds")
       })
   
 });

@@ -14,6 +14,7 @@ let doctorSchema= mongoose.Schema({
     "phoneNumber": { type : String , unique : true, required : true },
     "specialty":String,              
     "Location":String,
+    "DepartName":String,
      "url":{
       type: String,
       default: 'https://previews.123rf.com/images/miceking/miceking1702/miceking170200267/72684680-doctor-word-in-retro-font.jpg'
