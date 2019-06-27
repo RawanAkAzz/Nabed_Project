@@ -40,18 +40,18 @@ class EditProfile extends Component {
     onClick(event) {
       event.preventDefault();
   
-      console.log(this.state)
-      var that = this;
-      $.ajax({
-        type: "Get",
-        url: "http://localhost:5001/EditProfile",
-        data: that.state,
-        success: function(data) {
-          alert("Welcome to your profile");
-          console.log("hide");
-        },
-        error: function(request, status, error) {}
-      });
+      // console.log(this.state)
+      // var that = this;
+      // $.ajax({
+      //   type: "Post",
+      //   url: "http://localhost:5001/EditProfile",
+      //   data: that.state,
+      //   success: function(data) {
+      //     alert("Welcome to your profile");
+      //     console.log("hide");
+      //   },
+      //   error: function(request, status, error) {}
+      // });
     }
   render() {
     return (
@@ -116,7 +116,7 @@ class EditProfile extends Component {
    <i className="fa fa-user prefix"></i>
  </span>
 </div>
-<MDBContainer label="text" className="form-control" placeholder="Your name" aria-label="email" aria-describedby="basic-addon" ></MDBContainer>
+<MDBContainer label="text" className="form-control" placeholder="Your name" aria-label="email" aria-describedby="basic-addon" >{this.state.name}</MDBContainer>
 </div>
 <div className="input-group">
 <div className="input-group-prepend">
@@ -124,15 +124,21 @@ class EditProfile extends Component {
    {/* <i className="fa fa-user prefix"></i> */}
  {/* </span> */}
 </div>
-{/* <h1 type="text" className="form-control" placeholder="name" aria-label="name" aria-describedby="basic-addon" >{user.name}</h1> */}
+<MDBContainer type="text" className="form-control" placeholder="name" aria-label="name" aria-describedby="basic-addon" >{this.state.phoneNumber}</MDBContainer>
+<div className="input-group">
+<div className="input-group-prepend">
+ <span className="input-group-text" id="basic-addon">
+   <i className="fa fa-user prefix"></i>
+ </span>
+</div>
 <MDBContainer label="E-mail address" outline icon="envelope" />
 </div>
-<div>
+
 <MDBContainer label="password" outline icon="" />
 
 </div>
 <div>
-<MDBContainer label="phoneNumber" outline icon="" />
+<MDBContainer label="phoneNumber" outline icon="" >{this.state.phoneNumber}</MDBContainer>
 
 </div>
 <div>

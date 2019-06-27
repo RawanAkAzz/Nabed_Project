@@ -10,7 +10,10 @@ class ProfilePage extends Component {
       this.state = {
         image: null,
         url: "",
-        name:""
+        name:"",
+        doctor:{
+
+        }
              
   //       users :[
   //         {
@@ -92,15 +95,26 @@ class ProfilePage extends Component {
       console.log(this.state)
       var that = this;
       $.ajax({
-        type: "POST",
-        url: "http://localhost:5001/Profile",
-        data: that.state,
-        success: function(data) {
-          alert("Welcome to your profile");
-          console.log("hide");
-        },
-        error: function(request, status, error) {}
-      });
+        url: "https://app.asana.com/-/api/0.1/workspaces/",//q url
+        type: 'GET',
+        success: function(res) {
+            console.log(res);
+            this.setState({
+            doctor:res
+
+            })
+        }
+    });
+    //   $.ajax({
+    //     type: "Get",
+    //     url: "http://localhost:5001/Profile",
+    //     // data: that.state,
+    //     success: function(data) {
+    //       alert("Welcome to your profile");
+    //       console.log("hide");
+    //     },
+    //     error: function(request, status, error) {}
+    //   });
     }
     render() {
       // const style = {

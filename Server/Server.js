@@ -149,34 +149,34 @@ app.post("/Register", (req, res) => {
   // res.send("Hello World");
 });
 
-// app.get("/Profile", (req, res) => {
-//   console.log(req.body.image); 
-//   var name = req.body.name
-// //  var phoneNumber = req.body.phoneNumber
-// //  var specialty = req.body.specialty
-// //  var  Location = req.body.Location
-// //   var image = req.body.image;
-// //   var url = req.body.url;
-//   db.Doctor.findOne({name: name})
-//        .then(function(data){
-//        res.send(data)
-//         console.log(res.data)
-//       //  if (err) {
-//       //   // console.error(err);
-//       //   res.status(500).json({
-//       //     error: "Internal error please try again"
-//       //   });
-//       // } else if (!data) {
-//       //   res.status(401).json({
-//       //     error: "Incorrect username or password"
-//       //   });
-//       // } else {
-//       //   // console.log(user)
-//       //   res.sendStatus(data);
-//       // }
-//        })
+app.get("/Profile", (req, res) => {
+  console.log(req.body.image); 
+  var name = req.body.name
+  var phoneNumber = req.body.phoneNumber
+//  var specialty = req.body.specialty
+//  var  Location = req.body.Location
+//   var image = req.body.image;
+//   var url = req.body.url;
+  db.Doctor.findOne({name: name , phoneNumber?:phoneNumber})
+       .then(function(data){
+       res.send(data)
+        console.log(res.data)
+      //  if (err) {
+      //   // console.error(err);
+      //   res.status(500).json({
+      //     error: "Internal error please try again"
+      //   });
+      // } else if (!data) {
+      //   res.status(401).json({
+      //     error: "Incorrect username or password"
+      //   });
+      // } else {
+      //   // console.log(user)
+      //   res.sendStatus(data);
+      // }
+       })
 
-// });
+});
 app.post("/EditProfile", (req, res) => {
   console.log(req.body.image); 
   var name = req.body.name
@@ -186,13 +186,18 @@ app.post("/EditProfile", (req, res) => {
   var url = req.body.url;
   db.Doctor.findOne(
   
+
+
+
+
     {
-      name: name 
-    //   phoneNumber:phoneNumber, 
+      specialty:{$specialty :"Dental section"}
+    
+    //phoneNumber:phoneNumber, 
     //   specialty : specialty,
     //      url:url,
     // Location:Location 
-   }).then(function(user){
+   }).then(function(data){
        res.send(user)
        console.log(user
         )

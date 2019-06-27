@@ -8,7 +8,7 @@ db.once('open', function() {
 });
 
 let doctorSchema= mongoose.Schema({
-    "name": { type : String , unique : true, required : true },
+    "name": { type : String },
     "email": { type : String , unique : true, required : true },
     "password":{ type : String , unique : true, required : true },
     "phoneNumber": { type : String , unique : true, required : true },
