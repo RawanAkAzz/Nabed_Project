@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { storage } from "../firebase/firebase";
 import { MDBInput } from "mdbreact";
+import $ from "jquery";
 
 
 class ProfilePage extends Component {
@@ -8,7 +9,9 @@ class ProfilePage extends Component {
      super(props);
       this.state = {
         image: null,
-        url: ""
+        url: "",
+        name:""
+             
   //       users :[
   //         {
   //       image: null,
@@ -70,12 +73,12 @@ class ProfilePage extends Component {
   changed(e) {
       this.setState({ [e.target.name]: e.target.value });
     }
-    componentDidMount() {
-      fetch("http://localhost:5001/Doctors")
-      .then(response => response.json())
-      .then(users => this.setState({ users }));
-      console.log("users")
-    }
+    // componentDidMount() {
+    //   fetch("http://localhost:5001/Doctors")
+    //   .then(response => response.json())
+    //   .then(users => this.setState({ users }));
+    //   console.log("users")
+    // }
     onChange(e) {
       if (e.target.files[0]) {
         const image = e.target.files[0];
@@ -83,7 +86,22 @@ class ProfilePage extends Component {
       }
     }
   
- 
+    onClick(event) {
+      event.preventDefault();
+  
+      console.log(this.state)
+      var that = this;
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:5001/Profile",
+        data: that.state,
+        success: function(data) {
+          alert("Welcome to your profile");
+          console.log("hide");
+        },
+        error: function(request, status, error) {}
+      });
+    }
     render() {
       // const style = {
       //   float: 'left',

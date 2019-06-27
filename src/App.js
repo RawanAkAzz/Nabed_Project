@@ -22,6 +22,7 @@ import Ophthalmology from "./Components/CategoriesCards/Ophthalmology";
 import GeneralServices from "./Components/CategoriesCards/GeneralServices";
 import imageUpload from "./Components/imageUpload";
 import Healthy from "./Components/CategoriesCards/Healthy";
+import EditProfile from "./Components/EditPage/EditProfile";
 import firebase from "./Components/firebase/firebase";
 class App extends Component {
   render() {
@@ -47,6 +48,7 @@ class App extends Component {
           <Route exact path="/GeneralServices" component={GeneralServices} />
           <Route exact path="/Healthy" component={Healthy} />
           <Route exact path="/imageUpload" component={imageUpload} />
+          <Route exact path="/EditProfile" component={EditProfile} />
           <Route exact path="/firebase" component={firebase} />
         </Router>
       </div>

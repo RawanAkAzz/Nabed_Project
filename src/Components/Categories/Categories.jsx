@@ -93,7 +93,7 @@ class Categories extends Component {
               </a>
               <p>
                 <a className="l-dark" href="/HeartSection" title="HeartSection">
-                  Heart Section
+                Children's Ward
                 </a>
               </p>
             </MDBCard>

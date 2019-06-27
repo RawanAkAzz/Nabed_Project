@@ -1,6 +1,7 @@
 import React, { Component } from "../../../node_modules/react";
 import "./doctorCards";
 
+
 class DoctorCards extends Component {
   constructor(props) {
     super(props);
@@ -53,7 +54,7 @@ class DoctorCards extends Component {
                 <button>
                   <a
                     className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
-                    href="/ProfilePage"
+                    href="/EditProfile"
                   >
                     Profile
                   </a>

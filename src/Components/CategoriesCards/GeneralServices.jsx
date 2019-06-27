@@ -45,7 +45,7 @@ class GeneralServices extends Component {
                 <button>
                   <a
                     class="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
-                    href="/ProfilePage"
+                    href="/EditProfile"
                   >
                     Profile
                   </a>

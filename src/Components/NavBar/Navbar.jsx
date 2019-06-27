@@ -21,6 +21,13 @@ class NavBar extends Component {
             </a>
           </div>
           <div className="dtc v-mid tr pa3">
+          <a
+              className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
+              href="/EditProfile"
+            >
+              Profile
+            </a>
+
             <a
               className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
               href="/Categories"

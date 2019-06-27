@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import {
   MDBContainer,
   MDBRow,
@@ -12,51 +12,92 @@ import {
   MDBModalFooter
 } from "mdbreact";
 
+
 import $ from "jquery";
 
 class SignIn extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-        email: "",
-        password: ""
+    this.state = { 
+      states : {
+     email: "",
+      password:""
+      }
       
+    
     };
-
+    this.onChange = this.onChange.bind(this);
+   
   }
 
-  onChangeemail(e) {
-   this.setState({
-     email:e.target.value
-   } ,()=> console.log(this.state) 
- )
+  componentDidMount() {
+    // fetch('https://http://localhost:3000/')
+    //   .then(response => response.json())
+    //   .then(data => this.setState({ data }));
   }
-  onChangepass(e) {
-    this.setState({
-      password:e.target.value
-    } ,()=> console.log(this.state) 
-  )
+  onChange(e) {
+    console.log(this.state.states)
+    var states = this.state.states;
+   var email = e.target.id;
+   var value = e.target.value;
+     
+       console.log(email , value)
+   states[email] = value;
+    
+      this.setState({ states: states });
+    // console.log(this.state.states);
+    
   }
+ 
+
   onClick(event) {
     event.preventDefault();
 
-     console.log(this.state)
     var that = this;
+
     $.ajax({
       type: "POST",
       url: "http://localhost:5001/SignIn",
-      body: JSON.stringify(that.state),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
-      ,
-      success: function(body) {
-        alert("the Name is already used");
-        // console.log("hide");
+      data: that.state.states,
+      success: function(data) {
+        console.log(data)
+        // alert("the Name is used, please use another name");
+        // return <Redirect to='/ProfilePage'  />
+// return<Link to = "/ProfilePage"> jb</Link>
+//that.props.history.push("/ProfilePage");
+that.props.history.push("/", { response: data })
+
       },
-      error: function(request, status, error) {}
+      error: function(request, status, error) {
+        console.log(error)
+        alert("wrong user")
+      }
     });
-  }
+   
+};
+// onSubmit = event => {
+//   event.preventDefault();
+//   fetch("http://localhost:5000/SignIn", {
+//     method: "Get",
+//     body: JSON.stringify(this.state),
+//     headers: {
+//       "Content-Type": "application/json"
+//     }
+//   })
+//     .then(res => {
+//       if (res.status === 200) {
+//         this.props.history.push("/ProfilePage");
+//       } else {
+//         const error = new Error(res.error);
+//         throw error;
+//       }
+//     })
+//     .catch(err => {
+//       console.error(err);
+//       alert("Error logging in please try again");
+//     });
+//   }
+  
   render() {
     return (
       <MDBContainer className="d-flex justify-content-center mt-5">
@@ -78,8 +119,9 @@ class SignIn extends Component {
                   success="right"
                   id="email"
                   name="email"
+                  
                   value={this.state.email}
-                  onChange={this.onChangeemail.bind(this)}
+                 onChange={this.onChange}
                 />
                 <MDBInput
                   label="Your password"
@@ -90,7 +132,7 @@ class SignIn extends Component {
                   id="password"
                   name="password"
                   value={this.state.password}
-                  onChange={this.onChangepass.bind(this)}
+                  onChange={this.onChange}
                 />
 
                 <div className="text-center mb-3">
@@ -99,11 +141,12 @@ class SignIn extends Component {
                     gradient="blue"
                     rounded
                     className="btn-block z-depth-1a"
-                    onClick={this.onClick}
-                  >
-                    {/* <Link to="/ProfilePage" style={{ color: "white" }}>
+                    onClick={this.onClick.bind(this)}
+                 
+                    // onSubmit={this.onSubmit.bind(this)}>
+                 >
                       SignIn
-                    </Link> */}
+                    
                   </MDBBtn>
                 </div>
                 <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
