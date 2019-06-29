@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import Image from "../Image/Image"
-import { MDBCard, MDBCardImage, MDBRow } from "mdbreact";
+import { MDBCard, MDBCardImage, MDBRow,MDBCol,MDBCardBody,MDBCardTitle } from "mdbreact";
 
 class Categories extends Component {
   constructor(props) {
@@ -11,175 +10,170 @@ class Categories extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <div>
-          <center>
-            <h2 className="md-display-1 inverse center">Department</h2>
-          </center>
-        </div>
-        <div className="d-flex justify-content-center mt-5">
-          <MDBRow className="m-4 ">
-            <MDBCard style={{ width: "22rem" }}>
+      <section className="text-center my-5">
+          <MDBRow>
+          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+            <MDBCard  wide ecommerce >
               <a href="/Sugrery" title="Department of Sugrery">
                 <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
+                cascade 
+                  src="http://care360clinic.org/wp-content/uploads/2018/04/general-surgery-at-neoalta.jpg"
+                  top
                   alt="Department of Sugrery"
-                  waves
-                />
+                />  
               </a>
-              <p>
-                <a
-                  className="l-dark"
-                  href="Sugrery"
-                  title="Department of Sugrery"
-                >
-                  {" "}
-                  Department of Sugrery
-                </a>
-              </p>
-            </MDBCard>{" "}
-          </MDBRow>
-          <MDBRow className="m-4">
-            <MDBCard style={{ width: "22rem" }}>
+              <MDBCardBody cascade className="text-center">
+                <MDBCardTitle>
+                  <strong>
+                    <a href='/Sugrery'>Department of Sugrery</a>
+                  </strong>
+                </MDBCardTitle>
+              </MDBCardBody>
+            </MDBCard>
+            </MDBCol>
+
+            <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+            <MDBCard wide ecommerce >
               <a href="/Neurology" title="Department of Neurology">
                 <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
+                cascade
+                  src="https://www.acmh.org/Files/User/bigstock-Neurology-Diagnostics-Hologra-303179911.jpg"
                   alt="Department of Neurology"
-                  waves
+                  top
                 />
               </a>
-              <p className="md-body-1">
+              <MDBCardBody cascade className="text-center">
                 <a
                   className="l-dark"
                   href="/Neurology"
                   title="Department of Neurology"
                 >
-                  {" "}
-                  Department of Neurology
                 </a>
-              </p>
+                <MDBCardTitle>
+                <strong>
+                  <a href="/Neurology">Department of Neurology</a>
+                </strong>
+              </MDBCardTitle>
+              </MDBCardBody>
             </MDBCard>
-          </MDBRow>
-          <MDBRow className="m-4">
-            <MDBCard style={{ width: "22rem" }}>
+            </MDBCol>
+      
+          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+            <MDBCard wide ecommerce>
               <a href="/Dental" title="Dental section">
                 <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
+                className="img-fluid br3"
+                  src="https://content2.jdmagicbox.com/comp/def_content/dentist/default-dentist-3.jpg"
+                  top
                   alt="Dental section"
-                  waves
+                  cascade
                 />
               </a>
-
-              <p>
+              <MDBCardBody cascade className="text-center">
+              <MDBCardTitle>
+              <strong>
                 <a className="l-dark" href="/Dental" title="Dental section">
-                  {" "}
                   Dental section
                 </a>
-              </p>
+              </strong>
+              </MDBCardTitle>  
+              </MDBCardBody>
             </MDBCard>
-          </MDBRow>
-          <MDBRow className="m-4">
-            <MDBCard style={{ width: "22rem" }}>
+          </MDBCol>
+           
+          <MDBCol  lg="4" md="12" className="mb-lg-0 mb-4">
+            <MDBCard wide ecommerce >
               <a
                 href="/HeartSection"
-                title="Heart Section
-"
+                title="Heart Section"
               >
                 <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
+                cascade
+                  src="https://www.heartuk.org.uk/images/home/stethoscope-heart.jpg"
+                  top
                   alt="Heart Section"
-                  waves
+                 
                 />
               </a>
-              <p>
-                <a className="l-dark" href="/HeartSection" title="HeartSection">
+              <MDBCardBody cascade className="text-center">
+              <MDBCardTitle>
+              <strong>
+                <a href="/HeartSection" title="HeartSection">
                 Children's Ward
                 </a>
-              </p>
+              </strong>
+              </MDBCardTitle> 
+              </MDBCardBody>
             </MDBCard>
-          </MDBRow>{" "}
-        </div>
-        <div className="m-4 d-flex justify-content-center mt-5">
-          <MDBRow className="m-4 ">
-            <MDBCard style={{ width: "22rem" }}>
+          </MDBCol>
+        
+          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+            <MDBCard wide ecommerce>
               <a href="/Laboratory" title="Laboratory Department">
                 <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
+                cascade
+                  src="https://canada.businesschief.com/public/uploads/large/large_e917f648_ac19_c9a6_7691_180bca9f083b.jpg"
                   alt="Laboratory Department"
-                  waves
+                 top
                 />
               </a>
-              <p className="md-body-1">
-                <a
-                  className="l-dark"
-                  href="/Laboratory"
-                  title="Laboratory Department"
-                >
-                  Laboratory Department
-                </a>
-              </p>
+              <MDBCardBody cascade className="text-center">
+              <MDBCardTitle>
+                <strong>
+                   <a href="/Laboratory" title="Laboratory Department" >  Laboratory Department </a>
+                </strong>
+              </MDBCardTitle>
+              </MDBCardBody> 
             </MDBCard>
-          </MDBRow>
-          <MDBRow className="m-4">
-            <MDBCard style={{ width: "22rem" }}>
+          </MDBCol>
+            
+       
+          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+            <MDBCard wide ecommerce>
               <a href="/Ophthalmology">
                 <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
+                cascade
+                top
+                  src="https://patientsrising.org/wp-content/uploads/2018/01/ophthalmologist-750xauto@2x.jpg"
                   alt="Department of Ophthalmology"
-                  waves
+                 
                 />
-
-                <p>
-                  <a
-                    className="l-dark"
-                    href="/Ophthalmology"
-                    title="Department of Ophthalmology"
-                  >
-                    Department of Ophthalmology
-                  </a>
-                </p>
-              </a>
-            </MDBCard>
-          </MDBRow>{" "}
-          <MDBRow className="m-4">
-            <MDBCard style={{ width: "22rem" }}>
-              <a href="/GeneralServices" title="GeneralServices">
-                <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
-                  alt="GeneralServices"
-                  waves
-                />
-              </a>
-              <p className="md-body-1">
-                <a
-                  className="l-dark"
-                  href="/GeneralServices"
-                  title="GeneralServices"
-                >
-                  GeneralServices
                 </a>
-              </p>
+               <MDBCardBody cascade className="text-center">
+                 <MDBCardTitle>
+                    <strong>
+                      <a href="/Ophthalmology" title="Department of Ophthalmology" >
+                        Department of Ophthalmology
+                      </a>  
+                    </strong>
+                 </MDBCardTitle>
+               </MDBCardBody>
             </MDBCard>
-          </MDBRow>
-          <MDBRow className="m-4">
-            <MDBCard style={{ width: "22rem" }}>
-              <a href="/Healthy" title>
-                <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
-                  alt="Healthy"
-                  waves
-                />
+          </MDBCol>
 
-                <p>
-                  <a className="l-dark" href="/Healthy" title="Healthy">
-                    Healthy and Safty
-                  </a>
-                </p>
+          <MDBCol  lg="4" md="12" className="mb-lg-0 mb-4">
+            <MDBCard wide ecommerce>
+              <a href="/Healthy" title="Healthy">
+                <MDBCardImage
+                cascade
+                top
+                  src="https://blogs.bcm.edu/wp-content/uploads/2016/10/healthy-habits-thumbnail-1.png"
+                  alt="Healthy"
+                />
               </a>
+              <MDBCardBody cascade className="text-center">
+                <MDBCardTitle>
+                  <strong>
+                    <a  href="/Healthy" title="Healthy">
+                    Healthy and Safty
+                    </a>
+                  </strong>
+                </MDBCardTitle>
+              </MDBCardBody>
             </MDBCard>
-          </MDBRow>
-        </div>
-      </React.Fragment>
+          </MDBCol>
+        </MDBRow>
+      </section>
     );
   }
 }

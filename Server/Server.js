@@ -1,11 +1,4 @@
 const express = require("express");
-const bcrypt = require("bcrypt");
-const {
-  HTTP_CREATED,
-  HTTP_UNAUTHORIZED,
-  HTTP_BAD_REQUEST,
-  HTTP_SERVER_ERROR
-} = require("./Https.js");
 const db = require("./db.js");
 const app = express();
 var cors = require("cors");
@@ -88,18 +81,6 @@ app.post("/SignIn", function(req, res) {
       })
     })
 
-// if (!user) {
-//   res.status(401).json({
-//     error: "Incorrect username or password"
-//   });
-// } else {
-//  res.send(user)
-//  console.log(user)
-// }
-//  })
-//  .catch(function(err){
-//     return res.status(404).send(err.message);
-// })
 app.post("/Register", (req, res) => {
      console.log(req.body)
     var name = req.body.name
@@ -118,36 +99,7 @@ app.post("/Register", (req, res) => {
            .catch(function(err){
               return res.status(404).send(err.message);
           })
-
-  // console.log(req.body);
-
-  // var name = req.body.name
-  //  var password = req.body.password
-  //   var phoneNumber = req.body.phoneNumber
-  //   var specialty = req.body.specialty
-  //   var  Location = req.body.Location
-  //   var fbAccount = req.body.fbAccount
-
-  // const hashedPassword = bcrypt.hashSync(password, 10);
-  // doctorSchema
-  //   .create({
-  //     name: name,
-  //     password: hashedPassword,
-  //     phoneNumber: phoneNumber,
-  //     specialty: specialty,
-  //     Location:Location
-  //   })
-  //   .then(function() {
-  //     return res.status(HTTP_CREATED).send("Sign Up Successfull");
-  //   })
-  //   .catch(function(err) {
-  //     if (err.code === 11000) {
-  //       res.status(HTTP_BAD_REQUEST).send("This username is already taken");
-  //     }
-  //     return res.status(HTTP_SERVER_ERROR).send("Server Error");
-  //   });
-  // console.log(req.body)
-  // res.send("Hello World");
+ 
 });
 
 app.get("/Profile", (req, res) => {

@@ -3,19 +3,17 @@ import React, { Component } from "../../../node_modules/react";
 class Image extends Component {
   render() {
     return(
-        <article class="athelas">
-        <div class="vh-50 dt w-100 tc cover " style={{background:'url(https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) no-repeat center'}}>
-          <div class="dtc v-mid">
-            <h1 class="f1 f-headline-l fw1 i white-70">Nabed Haya</h1>
-            <blockquote class="ph0 mh0 measure f4 lh-copy center">
-              <p class="fw1 white-70">
-                It's the space you put between the notes that make the music.
-              </p>
-            </blockquote>
+      <article class="athelas">
+        <div class="vh-100 dt w-100 cover  " style={{background:'url(https://www.popsci.com/sites/popsci.com/files/images/2016/12/computer-1149148_1920.jpg) no-repeat center '}}>
+          <div class="dtc v-mid">     
+            <div class="f1 center  w-20 tc pv5 bg-black-20 " style={{color:'#FFF'}}>
+              <p>WRITE HERE</p>
+              <br/>
+              <p>fddfdfdfjdfjj</p>
+            </div>
           </div>
-        </div>
+        </div>   
       </article>
-      
     )
   }
 }

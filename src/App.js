@@ -43,7 +43,7 @@ class App extends Component {
           <Route exact path="/Neurology" component={Neurology} />
           <Route exact path="/Dental" component={Dental} />
           <Route exact path="/HeartSection" component={HeartSection} />
-          <Route exact path="/Laboratory" component={Laboratory} />
+          <Route exact path="/Lab ÷oratory" component={Laboratory} />
           <Route exact path="/Ophthalmology" component={Ophthalmology} />
           <Route exact path="/GeneralServices" component={GeneralServices} />
           <Route exact path="/Healthy" component={Healthy} />
