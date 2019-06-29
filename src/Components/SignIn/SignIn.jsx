@@ -18,53 +18,42 @@ import $ from "jquery";
 class SignIn extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      states : {
+    this.state = {   
      email: "",
       password:""
-      }
-      
-    
     };
     this.onChange = this.onChange.bind(this);
    
   }
 
   componentDidMount() {
+    console.log("looooooog",this.props.history)
     // fetch('https://http://localhost:3000/')
     //   .then(response => response.json())
     //   .then(data => this.setState({ data }));
   }
   onChange(e) {
-    console.log(this.state.states)
-    var states = this.state.states;
-   var email = e.target.id;
-   var value = e.target.value;
-     
-       console.log(email , value)
-   states[email] = value;
-    
-      this.setState({ states: states });
-    // console.log(this.state.states);
+      this.setState({[e.target.id]:e.target.value});
     
   }
  
 
-  onClick(event) {
+  onClick= (event)=> {
+    var that = this
     event.preventDefault();
-
-    var that = this;
 
     $.ajax({
       type: "POST",
       url: "http://localhost:5001/SignIn",
-      data: that.state.states,
+      data: this.state,
       success: function(data) {
         console.log(data)
         // alert("the Name is used, please use another name");
         // return <Redirect to='/ProfilePage'  />
 // return<Link to = "/ProfilePage"> jb</Link>
 //that.props.history.push("/ProfilePage");
+console.log("Prooops",that.props.history)
+localStorage.setItem('storeObj', JSON.stringify(data));
 that.props.history.push("/", { response: data })
 
       },
@@ -198,4 +187,4 @@ that.props.history.push("/", { response: data })
     );
   }
 }
-export default SignIn;
+export default withRouter(SignIn);

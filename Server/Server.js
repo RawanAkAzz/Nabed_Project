@@ -42,7 +42,7 @@ app.get("/Doctors", (req, res) => {
 // app.get("SignIn");
 
 app.post("/SignIn", function(req, res) {
-  console.log(req.body.email)
+  console.log("booooooody",req.body)
   var email = req.body.email;
   var password = req.body.password;
 //   db.Doctor.findOne({ email: email , password:password}.then(function(doctor){
@@ -73,6 +73,7 @@ app.post("/SignIn", function(req, res) {
    })
        .then(function(doctor){
          if(doctor){
+           console.log("HIIII",doctor)
           return res.send(doctor);
          } else {
           res.status(401).json({
@@ -157,7 +158,7 @@ app.get("/Profile", (req, res) => {
 //  var  Location = req.body.Location
 //   var image = req.body.image;
 //   var url = req.body.url;
-  db.Doctor.findOne({name: name , phoneNumber?:phoneNumber})
+  db.Doctor.findOne({name: name , phoneNumber:phoneNumber})
        .then(function(data){
        res.send(data)
         console.log(res.data)
@@ -177,30 +178,16 @@ app.get("/Profile", (req, res) => {
        })
 
 });
-app.post("/EditProfile", (req, res) => {
-  console.log(req.body.image); 
-  var name = req.body.name
- var phoneNumber = req.body.phoneNumber
- var specialty = req.body.specialty
- var  Location = req.body.Location
-  var url = req.body.url;
+app.get("/EditProfile/:name", (req, res) => {
+  console.log("PARAMS",req.params); 
   db.Doctor.findOne(
   
-
-
-
-
     {
-      specialty:{$specialty :"Dental section"}
-    
-    //phoneNumber:phoneNumber, 
-    //   specialty : specialty,
-    //      url:url,
-    // Location:Location 
+      name:req.params.name
    }).then(function(data){
-       res.send(user)
-       console.log(user
-        )
+    console.log("USER",data)
+       res.send(data)
+      
        })
        .catch(function(err){
           return res.status(404).send(err.message);

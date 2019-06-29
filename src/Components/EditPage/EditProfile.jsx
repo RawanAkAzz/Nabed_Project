@@ -18,24 +18,29 @@ class EditProfile extends Component {
   }
   componentDidMount() {
     //is the best place to fetch data
-    var name = this.name
-    var that = this
-    fetch(`http://localhost:5001/EditProfile/${name}`,{
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      }
-    })
-    .then((data) => (data = data.json()))
-    .then((data) => {
-      that.setState({data});
-    }).then(()=>{
-      console.log(that.state)
-    })
-    .catch((err) => {
-      console.log({ err: 'error' }, err);
-    });
+    // var name = this.state.name
+    // var that = this
+    // fetch(`http://localhost:5001/EditProfile/${name}`,{
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "application/json"
+    //   }
+    // })
+    // .then((data) => (data = data.json()))
+    // .then((data) => {
+    //   console.log("DAAAATA",data)
+    //   that.setState({data});
+    // }).then(()=>{
+    //   console.log(that.state)
+    // })
+    // .catch((err) => {
+    //   console.log({ err: 'error' }, err);
+    // });
+   //this.setState(JSON.parse(localStorage.getItem('storeObj')));
+   localStorage.setItem('this.state', JSON.stringify(this.state));
+   var retrievedObject = localStorage.getItem('testObject');
+   console.log("asdasdasdasd",JSON.parse(retrievedObject))
     }
     onClick(event) {
       event.preventDefault();
