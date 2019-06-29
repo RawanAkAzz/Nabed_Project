@@ -52,7 +52,9 @@ Whichare:
 
 For more information about European Dental Center you can contact with us. 
      </p></div></div> 
+     <DoctorCards/>
      </div>
+     
     );
   }
 }

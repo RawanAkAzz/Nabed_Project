@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DoctorCards from "../Cards/doctorCards";
 
 class GeneralServices extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class GeneralServices extends Component {
       <div className="form-style-7">
         {this.state.doctors.map(doctor => {
           return (
+            
             <article class="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
               <img
                 src="https://i2-prod.mirror.co.uk/interactives/article12645227.ece/ALTERNATES/s810/doctor.jpg"
@@ -55,6 +57,7 @@ class GeneralServices extends Component {
           );
         })}
       </div>
+  
     );
   }
 }
