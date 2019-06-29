@@ -8,7 +8,7 @@ class EditProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        name: "Ahmad",
+        name: "",
         email: "",
         phoneNumber: "",
         specialty:"",              
@@ -18,44 +18,47 @@ class EditProfile extends Component {
     }
   }
   componentDidMount() {
-    //is the best place to fetch data
-    // var name = this.state.name
-    // var that = this
-    // fetch(`http://localhost:5001/EditProfile/${name}`,{
-    //   method: "GET",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json"
-    //   }
-    // })
-    // .then((data) => (data = data.json()))
-    // .then((data) => {
-    //   console.log("DAAAATA",data)
-    //   that.setState({data});
-    // }).then(()=>{
-    //   console.log(that.state)
-    // })
-    // .catch((err) => {
-    //   console.log({ err: 'error' }, err);
-    // });
-
-  const obj = localStorage.getItem("storeObj")
-
-   this.setState({url:obj.url,
-    email:obj.email,
-    phoneNumber:obj.phoneNumber,
-    specialty:obj.specialty
-
+ //   is the best place to fetch data
+    var name = this.state.name
+    var that = this
+    fetch(`http://localhost:5001/EditProfile/${name}`,{
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
     })
-  }
-    onClick(event) {
-      event.preventDefault();
+    .then((data) => (data = data.json()))
+    .then((data) => {
+      console.log("DAAAATA",data)
+      that.setState({name:name,email:email,
+          phoneNumber:phoneNumber,
+          specialty:specialty});
+    }).then(()=>{
+      console.log(that.state)
+    })
+    .catch((err) => {
+      console.log({ err: 'error' }, err);
+    });
+
+ // const obj = localStorage.getItem("storeObj")
+
+   //this.setState({url:obj.url,
+  //  this.setState({
+  //   email:email,
+  //   phoneNumber:phoneNumber,
+  //   specialty:specialty
+
+  //   })
+  // }
+    // onClick(event) {
+    //   event.preventDefault();
   
-      // console.log(this.state)
+    //   // console.log(this.state)
       // var that = this;
       // $.ajax({
       //   type: "Post",
-      //   url: "http://localhost:5001/EditProfile",
+      //   u//rl: "http://localhost:5001/EditProfile",
       //   data: that.state,
       //   success: function(data) {
       //     alert("Welcome to your profile");
