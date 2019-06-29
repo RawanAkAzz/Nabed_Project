@@ -60,9 +60,9 @@ class Register extends Component {
 
   
   render() {
-    return ( <MDBContainer className="justify-content-center mt-5">
+    return ( <MDBContainer className="d-flex justify-content-center pv7">
     <MDBRow>
-      <MDBCol md="6">
+      <MDBCol>
         <MDBCard>
           <MDBCardBody className="mx-4">
             <div className="text-center">
@@ -70,10 +70,8 @@ class Register extends Component {
                 <strong>Sign up</strong>
               </h3>
             </div>
-            <MDBInput label="Your name" id = "name" group type="text"   onChange={this.onChange}
-validate />
-            <MDBInput id = "email" label="Your email" group type="text" onChange={this.onChange}
-validate />
+            <MDBInput label="Your name" id = "name" group type="text"   onChange={this.onChange} validate />
+            <MDBInput id = "email" label="Your email" group type="text" onChange={this.onChange} validate />
              <MDBInput
               label="Your password"
               group
@@ -83,15 +81,6 @@ validate />
               id="password"
               onChange={this.onChange}
             />
-         <MDBInput label="Your phoneNumber" id="phoneNumber" group type="number"  onChange={this.onChange}
-          onChange={this.onChange}
-          />
-         <MDBInput label="Your Location" id = "location"  group type="text"   onChange={this.onChange}
-/>
-         <MDBInput label="Your description" id = "description"  group type="text"   onChange={this.onChange}
-/>
-         <textarea id="questionnaire" id="name" cols="30" rows="10"></textarea>
-
 
             {/* <div className="md-form pb-3">
               <div className="form-check my-4">
@@ -109,59 +98,27 @@ validate />
               </div>
             </div> */}
             <MDBRow className="d-flex align-items-center mb-4">
-              <MDBCol md="6" className="text-center">
+              <MDBCol className="text-center">
                 <button
                   type="button"
                   className="btn btn-pink btn-block btn-rounded z-depth-1"
                   onClick={(event) => this.onClick(event)}
              >
                   <a href="/signIn" className="blue-text ml-1">
-                    Sign up
+                    <span style={{color:'white'}}>Sign up</span>
                   </a>
                 </button>
               </MDBCol>
-              <MDBCol md="6">
-                <p className="font-small grey-text d-flex justify-content-end">
+              <MDBCol >
+                <p >
                   Have an account?
-                  <a href="/signIn" className="blue-text ml-1">
+                  <a href="/signIn" className="blue-text ml-2">
                     Log in
                   </a>
                 </p>
               </MDBCol>
             </MDBRow>
           </MDBCardBody>
-          <div className="footer pt-3 mdb-color lighten-3">
-            <MDBRow className="d-flex justify-content-center">
-              <p className="font-small white-text mb-2 pt-3">
-                or Sign up with:
-              </p>
-            </MDBRow>
-            <MDBRow className="mt-2 mb-3 d-flex justify-content-center">
-              <a
-                href="https://www.facebook.com/"
-                className="fa-lg p-2 m-2 fb-ic"
-              >
-                <MDBIcon
-                  icon="facebook-f"
-                  fab
-                  size="lg"
-                  className="white-text"
-                >
-                  {" "}
-                </MDBIcon>
-              </a>
-              <a href="#!" className="fa-lg p-2 m-2 tw-ic">
-                <MDBIcon className="fab fa-twitter white-text fa-lg">
-                  {" "}
-                </MDBIcon>
-              </a>
-              <a href="#!" className="fa-lg p-2 m-2 gplus-ic">
-                <MDBIcon className="fab fa-google-plus-g white-text fa-lg">
-                  {" "}
-                </MDBIcon>
-              </a>
-            </MDBRow>
-          </div>
         </MDBCard>
       </MDBCol>
     </MDBRow>

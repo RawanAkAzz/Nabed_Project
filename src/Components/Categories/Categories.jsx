@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Image from "../Image/Image"
 import { MDBCard, MDBCardImage, MDBRow } from "mdbreact";
 
 class Categories extends Component {
@@ -12,29 +11,23 @@ class Categories extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
-          <center>
-            <h2 className="md-display-1 inverse center">Department</h2>
-          </center>
-        </div>
-        <div className="d-flex justify-content-center mt-5">
-          <MDBRow className="m-4 ">
-            <MDBCard style={{ width: "22rem" }}>
+        <div className="d-flex justify-content-center mt-5 ">
+          <MDBRow className="m-4">
+            <MDBCard  style={{ width: "22rem" }}>
               <a href="/Sugrery" title="Department of Sugrery">
-                <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
+                <MDBCardImage 
+                className="img-fluid br3"
+                  src="http://care360clinic.org/wp-content/uploads/2018/04/general-surgery-at-neoalta.jpg"
                   alt="Department of Sugrery"
                   waves
-                />
+                />  
               </a>
               <p>
                 <a
-                  className="l-dark"
+                  className="l-dark "
                   href="Sugrery"
                   title="Department of Sugrery"
-                >
-                  {" "}
-                  Department of Sugrery
+                ><h3 className='tc'>Department of Sugrery</h3>
                 </a>
               </p>
             </MDBCard>{" "}
@@ -43,19 +36,19 @@ class Categories extends Component {
             <MDBCard style={{ width: "22rem" }}>
               <a href="/Neurology" title="Department of Neurology">
                 <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
+                className="img-fluid br3"
+                  src="https://www.acmh.org/Files/User/bigstock-Neurology-Diagnostics-Hologra-303179911.jpg"
                   alt="Department of Neurology"
                   waves
                 />
               </a>
-              <p className="md-body-1">
+              <p>
                 <a
                   className="l-dark"
                   href="/Neurology"
                   title="Department of Neurology"
                 >
-                  {" "}
-                  Department of Neurology
+                <h3>Department of Neurology</h3>
                 </a>
               </p>
             </MDBCard>
@@ -64,7 +57,8 @@ class Categories extends Component {
             <MDBCard style={{ width: "22rem" }}>
               <a href="/Dental" title="Dental section">
                 <MDBCardImage
-                  src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
+                className="img-fluid br3"
+                  src="https://content2.jdmagicbox.com/comp/def_content/dentist/default-dentist-3.jpg"
                   alt="Dental section"
                   waves
                 />
@@ -86,6 +80,7 @@ class Categories extends Component {
 "
               >
                 <MDBCardImage
+                className="img-fluid"
                   src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
                   alt="Heart Section"
                   waves
@@ -104,6 +99,7 @@ class Categories extends Component {
             <MDBCard style={{ width: "22rem" }}>
               <a href="/Laboratory" title="Laboratory Department">
                 <MDBCardImage
+                className="img-fluid"
                   src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
                   alt="Laboratory Department"
                   waves
@@ -124,6 +120,7 @@ class Categories extends Component {
             <MDBCard style={{ width: "22rem" }}>
               <a href="/Ophthalmology">
                 <MDBCardImage
+                className="img-fluid"
                   src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
                   alt="Department of Ophthalmology"
                   waves
@@ -145,6 +142,7 @@ class Categories extends Component {
             <MDBCard style={{ width: "22rem" }}>
               <a href="/GeneralServices" title="GeneralServices">
                 <MDBCardImage
+                className="img-fluid"
                   src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
                   alt="GeneralServices"
                   waves
@@ -165,6 +163,7 @@ class Categories extends Component {
             <MDBCard style={{ width: "22rem" }}>
               <a href="/Healthy" title>
                 <MDBCardImage
+                className="img-fluid"
                   src="https://www.zilliondesigns.com/images/portfolio/healthcare-hospital/iStock-471629610-Converted.png"
                   alt="Healthy"
                   waves

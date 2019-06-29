@@ -100,7 +100,7 @@ that.props.history.push("/", { response: data })
   
   render() {
     return (
-      <MDBContainer className="d-flex justify-content-center mt-5">
+      <MDBContainer className="d-flex justify-content-center pv7">
         <MDBRow>
           <MDBCol>
             <MDBCard>
