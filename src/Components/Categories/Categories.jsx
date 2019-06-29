@@ -10,9 +10,9 @@ class Categories extends Component {
   }
   render() {
     return (
-      <section className="text-center my-5">
+      <section className="text-center m-3">
           <MDBRow>
-          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+          <MDBCol lg="4" md="10" className=" mb-4">
             <MDBCard  wide ecommerce >
               <a href="/Sugrery" title="Department of Sugrery">
                 <MDBCardImage
@@ -32,7 +32,7 @@ class Categories extends Component {
             </MDBCard>
             </MDBCol>
 
-            <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+            <MDBCol lg="4" md="12" className=" mb-4">
             <MDBCard wide ecommerce >
               <a href="/Neurology" title="Department of Neurology">
                 <MDBCardImage
@@ -44,7 +44,6 @@ class Categories extends Component {
               </a>
               <MDBCardBody cascade className="text-center">
                 <a
-                  className="l-dark"
                   href="/Neurology"
                   title="Department of Neurology"
                 >
@@ -58,15 +57,15 @@ class Categories extends Component {
             </MDBCard>
             </MDBCol>
       
-          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+          <MDBCol lg="4" md="6" className="mb-4">
             <MDBCard wide ecommerce>
               <a href="/Dental" title="Dental section">
                 <MDBCardImage
-                className="img-fluid br3"
-                  src="https://content2.jdmagicbox.com/comp/def_content/dentist/default-dentist-3.jpg"
+                cascade
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjL2_cWMlVxR1QOKV-XpoCH3ln8qINTw3sLfxLJVUVvP03r_9t"
                   top
                   alt="Dental section"
-                  cascade
+                  
                 />
               </a>
               <MDBCardBody cascade className="text-center">
@@ -81,7 +80,7 @@ class Categories extends Component {
             </MDBCard>
           </MDBCol>
            
-          <MDBCol  lg="4" md="12" className="mb-lg-0 mb-4">
+          <MDBCol  lg="4" md="12" className=" mb-4">
             <MDBCard wide ecommerce >
               <a
                 href="/HeartSection"
@@ -151,10 +150,11 @@ class Categories extends Component {
             </MDBCard>
           </MDBCol>
 
-          <MDBCol  lg="4" md="12" className="mb-lg-0 mb-4">
-            <MDBCard wide ecommerce>
+          <MDBCol  lg="4" md="12" className="mb-4 pv3">
+            <MDBCard wide ecommerce >
               <a href="/Healthy" title="Healthy">
                 <MDBCardImage
+               
                 cascade
                 top
                   src="https://blogs.bcm.edu/wp-content/uploads/2016/10/healthy-habits-thumbnail-1.png"
