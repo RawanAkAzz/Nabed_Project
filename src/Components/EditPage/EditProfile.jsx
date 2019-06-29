@@ -1,6 +1,7 @@
 import React, { Component } from "../../../node_modules/react";
 import "../../Components/Cards/doctorCards";
 import { MDBContainer } from 'mdbreact';
+import ls from 'local-storage'
 import $ from "jquery";
 
 class EditProfile extends Component {
@@ -37,11 +38,16 @@ class EditProfile extends Component {
     // .catch((err) => {
     //   console.log({ err: 'error' }, err);
     // });
-   //this.setState(JSON.parse(localStorage.getItem('storeObj')));
-   localStorage.setItem('this.state', JSON.stringify(this.state));
-   var retrievedObject = localStorage.getItem('testObject');
-   console.log("asdasdasdasd",JSON.parse(retrievedObject))
-    }
+
+  const obj = localStorage.getItem("storeObj")
+
+   this.setState({url:obj.url,
+    email:obj.email,
+    phoneNumber:obj.phoneNumber,
+    specialty:obj.specialty
+
+    })
+  }
     onClick(event) {
       event.preventDefault();
   
@@ -112,7 +118,7 @@ class EditProfile extends Component {
      width="200"
    />
 <div className="form-row mb-3 col-auto mb-6 "> 
-
+<h1>{this.state.email}</h1>
  
  </div>
 <div className="input-group">
