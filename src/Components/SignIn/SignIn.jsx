@@ -28,9 +28,7 @@ class SignIn extends Component {
 
   componentDidMount() {
     console.log("looooooog",this.props.history)
-    // fetch('https://http://localhost:3000/')
-    //   .then(response => response.json())
-    //   .then(data => this.setState({ data }));
+    
   }
   onChange(e) {
       this.setState({[e.target.id]:e.target.value});

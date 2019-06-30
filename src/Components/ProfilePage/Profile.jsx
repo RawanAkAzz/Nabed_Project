@@ -15,31 +15,7 @@ class ProfilePage extends Component {
 
         }
              
-  //       users :[
-  //         {
-  //       image: null,
-  //       url: '',
-  //       progress: 0,
-  //       name: "ali",
-  //       specialty: "jdfd sifg ",
-  //       email: "hngfh",
-  //       phoneNumber: "079723456235",
-  //       Location: "amman"
-  // },
-  //       {
-  //         image: null,
-  //         url: '',
-  //         progress: 0,
-  //         name: "gtwetb ht",
-  //         fbAccount: "tb ny",
-  //         specialty: "dft",
-  //         email: "fd bh",
-  //         phoneNumber: "07864523553",
-  //         Location: "arbed"
-  //          }
-      
-      
-  //     ]
+  
       }
       this.handleChange = this.handleChange.bind(this);
 
@@ -105,24 +81,10 @@ class ProfilePage extends Component {
             })
         }
     });
-    //   $.ajax({
-    //     type: "Get",
-    //     url: "http://localhost:5001/Profile",
-    //     // data: that.state,
-    //     success: function(data) {
-    //       alert("Welcome to your profile");
-    //       console.log("hide");
-    //     },
-    //     error: function(request, status, error) {}
-    //   });
+    
     }
     render() {
-      // const style = {
-      //   float: 'left',
-      //  // display: 'flex',
-      //   //alignItems: 'center',
-      //   justifyContent: 'left'
-      // };
+     
       return (  
       
    <div>    <input type="file" name="image" onChange={this.handleChange} />
@@ -178,29 +140,3 @@ class ProfilePage extends Component {
 }
   export default ProfilePage;
   
-//       //    <div className="left" style ={style}>
-//       //   <progress value ={this.state.progress} max ="100"/>
-//       //       <input type="file" onChange = {this.onChange}/>
-//       //         <button onUpload= {this.onUpload} type="button">
-//       //           Upload Photo
-//       //         </button>
-//       //       <img src = {this.state.url || 'https://via.placeholder'
-//       //   }  height = "200" width = "200" />
-//       //  </div> 
-//      
-//       {/* <div className="input-group"> */}
-//       {/* <div className="input-group-prepend"> */}
-//         {/* <span className="input-group-text" id="basic-addon">
-//           <i className="fa fa-user prefix"></i>
-//         </span> */}
-//       </div>
-//<input type="text" className="form-control" placeholder="Username" aria-label="Username" >{user.name}</input> 
-       
-//     // </div>
-//     
-// </div>
-
-// //  </div>
-    
-// )
-//   }

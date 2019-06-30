@@ -23,6 +23,11 @@ class About extends Component{
 * Hospital software is easy to use and eliminates error caused by handwriting. New technology computer systems give perfect performance to pull up information from server or cloud servers.
 </ol>
            </p>
+           <p>To contact us : nabeedalhayah@nabed.org
+  <br/><br/>
+ Phone Number : +962796576785
+
+           </p>
         </div>
       </div>
     )

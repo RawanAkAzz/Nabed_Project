@@ -38,9 +38,9 @@ class NavBar extends Component {
               <MDBNavItem>
                   <MDBNavLink to="/SignIn" style={{color:'black'}}>LogIn</MDBNavLink>
                 </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/EditProfile" style={{color:'black'}}>Profile</MDBNavLink>
-                </MDBNavItem>
+                {/* <MDBNavItem>
+                  <MDBNavLink to="/Profile" style={{color:'black'}}>Profile</MDBNavLink>
+                </MDBNavItem> */}
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>

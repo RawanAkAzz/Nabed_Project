@@ -58,28 +58,36 @@ class Neurology extends Component{
       borderRadius: "17px",
       padding:"2rem"
     }
-         return(      <div className="text-justify align-bottom" style = {style} >
+         return(   
+              <div className="text-justify align-bottom" style = {style} >
          <Modal
-    show = {this.state.show}
-    size="lg"
-    aria-labelledby="contained-modal-title-vcenter"
-    centered
-  >
-    <Modal.Header closeButton>
-      <Modal.Title id="contained-modal-title-vcenter">
-        Modal heading
-      </Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-      <h4>{this.state.doctor.name}</h4>
-      <p>
-       {this.state.doctor.email}
-      </p>
-    </Modal.Body>
-    <Modal.Footer>
-      <Button onClick={this.close.bind(this)}>Close</Button>
-    </Modal.Footer>
-  </Modal>
+        show = {this.state.show}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+          MOre Details
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+           <h3>Doctor name :</h3>
+          <h4>{this.state.doctor.name}</h4>
+          <br/>
+          <h3>Doctor email :</h3>
+          <h4>
+           {this.state.doctor.email}
+           </h4>
+          <br/>
+          <h3>Phone Number :</h3>
+          <h4>{this.state.doctor.phoneNumber}</h4> 
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={this.close.bind(this)}>Close</Button>
+        </Modal.Footer>
+      </Modal>
   <img
            src="https://www.acmh.org/Files/User/bigstock-Neurology-Diagnostics-Hologra-303179911.jpg"
            className="db w-100 br2 br--top"
