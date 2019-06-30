@@ -20,7 +20,7 @@ class Register extends Component {
        email: "", 
        password: "",
         phoneNumber: "",
-        description: "",
+        specialty: "",
         Location: ""
         
       }
@@ -80,7 +80,28 @@ class Register extends Component {
               containerClass="mb-0"
               id="password"
               onChange={this.onChange}
-            />
+            />            
+            <MDBInput id = "phoneNumber" label="phoneNumber" group type="Number" onChange={this.onChange} validate />
+            {/* <MDBInput id = "specialty" label="specialty" group type="text" onChange={this.onChange} validate> */}
+              
+            <form onSubmit={this.handleSubmit}>
+        <label>
+         Specialty     
+          <select id="specialty" value={this.state.value} onChange={this.onChange}>
+            <option value="Sugrery">Sugrery of Department</option>
+            <option value="Neurology">Neurology of Department</option>
+            <option value="Dental">Dental Section</option>
+            <option value="Ophthalmology">Department of Ophthalmology</option>
+            <option value="Laboratory">Laboratory Department</option>
+            <option value="Healthy">Healthy and Safty</option>
+            <option value="Children">Children's Ward</option>
+
+
+          </select>
+        </label>
+        {/* <input type="submit" value="Submit" /> */}
+        </form>
+ {/* </MDBInput> */}
 
             {/* <div className="md-form pb-3">
               <div className="form-check my-4">

@@ -1,5 +1,7 @@
 import React, { Component } from "../../../node_modules/react";
 import "./doctorCards";
+import {  MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBBtn } from "mdbreact";
+
 
 
 class DoctorCards extends Component {
@@ -24,46 +26,52 @@ class DoctorCards extends Component {
     }
   render() {
     return (
-      <div className="form-style-7">
+      
+
+      <div className="center ">
         {this.state.doctors.map(doctor => {
           return (
-            <article className="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
-              <img
+            <section className="text-center m-5">
+            <MDBRow>
+            <MDBCol lg="3" md="6" className="mb-lg-0 mb-4">
+            <MDBCard style={{ width: "22rem" }}>
+              <MDBCardImage
                 src="https://i2-prod.mirror.co.uk/interactives/article12645227.ece/ALTERNATES/s810/doctor.jpg"
-                className="db w-100 br2 br--top"
+                waves 
+                 className="img-fluid"
                 alt="Photo menacing."
               />
-              <div className="pa2 ph3-ns pb3-ns">
-                <div className="dt w-100 mt1">
-                  <center>
-                    <div className="dtc">
+              <MDBCardBody>
+              <MDBCardTitle>
+        
                    
                       <h1 className="f5 f4-ns mv0 ">{doctor.name}</h1> <br></br>
                       <h1 className="f5 f4-ns mv0">{doctor.email}</h1>
 
-                    </div>
-                  </center>
-                </div>
+            
                 <center>
                   <p className="f6 lh-copy measure mt2 mid-gray">
                     {doctor.specialty}{" "}
                   </p>
                 </center>
-              </div>
-              <center>
-                <button>
-                  <a
-                    className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
+              
+              <center></center>
+              </MDBCardTitle>
+              <MDBBtn>
+                <a
+                  className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
                     href="/EditProfile"
-                  >
-                    Profile
-                  </a>
-                </button>
-              </center>
-            </article>
+                  > Profile</a>
+              </MDBBtn>
+              </MDBCardBody> 
+                </MDBCard>
+              </MDBCol>
+            </MDBRow>
+            </section>
           );
         })}
-      </div>
+      </div> 
+     
     );
   }
 }

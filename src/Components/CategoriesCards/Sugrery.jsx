@@ -1,24 +1,46 @@
 import React, { Component } from "react";
+import $ from "jquery";
+import  {Modal,Button} from "react-bootstrap"
 
 class Sugrery extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      doctors: [{
-      name:"Dr.Khalid",
-      email  : "khaledahmad@life.org"
-      },{
-       name:"Dr.Ali",
-       email : "ali.ammmar@life.org"
-      }]
+      doctors: [],
+      show:false,
+      doctor:{}
     };
   }
+  show(index){
+    
+    this.setState({
+      doctor:this.state.doctors[index],
+      show:!this.state.show
+    })
+  }
+  close(){
+    
+    this.setState({
+      
+      show:!this.state.show
+    })
+  }
   componentDidMount() {
+    var that = this;
     //is the best place to fetch data
-    fetch("http://localhost:5001/Doctors")
-      .then(response => response.json())
-      .then(doctors => this.setState({ doctors }));
-      }    
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:5001/Doctors",
+      data: {cat:"Healthy"},
+      success: function(data) {
+        that.setState({
+          doctors : data
+        })
+        console.log(data);
+      },
+      error: function(request, status, error) {}
+    });  
+  }
 
 render(){
     const style = {
@@ -36,9 +58,30 @@ render(){
     }
     return( 
     <div>
+      <Modal
+        show = {this.state.show}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Modal heading
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>{this.state.doctor.name}</h4>
+          <p>
+           {this.state.doctor.email}
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={this.close.bind(this)}>Close</Button>
+        </Modal.Footer>
+      </Modal>
               <img
-                src="https://www.essrahospital.com/uploads/images/services/services3_54.JPG"
-                className="db w-100 br2 br--top"
+                  src="http://care360clinic.org/wp-content/uploads/2018/04/general-surgery-at-neoalta.jpg"
+                  className="db w-100 br2 br--top"
                 alt="Photo menacing."
               />
 
@@ -60,7 +103,7 @@ render(){
          </ul>
         Our service is following the most updated and advanced standards of care in all subspecialties. We are committed to provide best patient care as well as achieving the teaching outcomes for residents and students.
         </p>  </div> 
-           {this.state.doctors.map(doctor => {
+           {this.state.doctors.map((doctor,index) => {
           return (
             <article className="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
               <img
@@ -86,13 +129,10 @@ render(){
                 </center>
               </div>
               <center>
-                <button>
-                  <a
-                    className="f6 fw4 hover-black no-underline black-70 dn dib-ns pv2 ph3"
-                    href="/ProfilePage"
-                  >
+                <button onClick={this.show.bind(this,index)}>
+                  
                     Profile
-                  </a>
+                  
                 </button>
               </center>
             </article>

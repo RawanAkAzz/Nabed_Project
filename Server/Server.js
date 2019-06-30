@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+
 // app.post('/ProfilePage',(req,res) => {
 //    var image = req.body.image;
 //    var url =  req.body.url ;
@@ -20,8 +21,9 @@ app.use(cors());
 //       return res.status(HTTP_SERVER_ERROR).send(err.message);
 // })
 
-app.get("/Doctors", (req, res) => {
-  db.Doctor.find({})
+app.post("/Doctors", (req, res) => {
+  console.log(req.body.cat , "xzdff")
+  db.Doctor.find({ specialty: req.body.cat  })
     .then(function(doctors) {
       console.log("RESSSSULt", doctors);
       return res.send(doctors);
@@ -35,9 +37,9 @@ app.get("/Doctors", (req, res) => {
 // app.get("SignIn");
 
 app.post("/SignIn", function(req, res) {
-  console.log("booooooody",req.body)
   var email = req.body.email;
   var password = req.body.password;
+  console.log("booooooody",req.body)
 //   db.Doctor.findOne({ email: email , password:password}.then(function(doctor){
 //     res.send(doctor)
 //     })
@@ -89,11 +91,12 @@ app.post("/Register", (req, res) => {
     var phoneNumber = req.body.phoneNumber
     var specialty = req.body.specialty
     var  Location = req.body.Location
-  
+    console.log(name)
 
      db.Doctor.create({name: name ,email:email,password:password,phoneNumber:phoneNumber, specialty
         : specialty ,Location:Location })
            .then(function(doctor){
+             console.log(doctor)
            res.send(doctor)
            })
            .catch(function(err){

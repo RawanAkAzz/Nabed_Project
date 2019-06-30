@@ -31,41 +31,39 @@ class EditProfile extends Component {
     .then((data) => (data = data.json()))
     .then((data) => {
       console.log("DAAAATA",data)
-      that.setState({name:name,email:email,
-          phoneNumber:phoneNumber,
-          specialty:specialty});
+      that.setState({data});
     }).then(()=>{
       console.log(that.state)
     })
     .catch((err) => {
       console.log({ err: 'error' }, err);
     });
+  }
+//  const obj = localStorage.getItem("storeObj")
 
- // const obj = localStorage.getItem("storeObj")
 
-   //this.setState({url:obj.url,
-  //  this.setState({
-  //   email:email,
-  //   phoneNumber:phoneNumber,
-  //   specialty:specialty
+//    this.setState({
+//     email:email,
+//     phoneNumber:phoneNumber,
+//     specialty:specialty
 
-  //   })
-  // }
-    // onClick(event) {
-    //   event.preventDefault();
+//     })
+//   }
+    onClick(event) {
+      event.preventDefault();
   
-    //   // console.log(this.state)
-      // var that = this;
-      // $.ajax({
-      //   type: "Post",
-      //   u//rl: "http://localhost:5001/EditProfile",
-      //   data: that.state,
-      //   success: function(data) {
-      //     alert("Welcome to your profile");
-      //     console.log("hide");
-      //   },
-      //   error: function(request, status, error) {}
-      // });
+      // console.log(this.state)
+      var that = this;
+      $.ajax({
+        type: "Post",
+        url: "http://localhost:5001/EditProfile",
+        data: that.state,
+        success: function(data) {
+          alert("Welcome to your profile");
+          console.log("hide");
+        },
+        error: function(request, status, error) {}
+      });
     }
   render() {
     return (
