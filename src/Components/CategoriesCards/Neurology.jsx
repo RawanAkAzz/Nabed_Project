@@ -81,8 +81,8 @@ class Neurology extends Component{
     </Modal.Footer>
   </Modal>
   <img
-            src="https://www.essrahospital.com/uploads/images/services/services3_54.JPG"
-            className="db w-100 br2 br--top"
+           src="https://www.acmh.org/Files/User/bigstock-Neurology-Diagnostics-Hologra-303179911.jpg"
+           className="db w-100 br2 br--top"
             alt="Photo menacing."
           />
 
@@ -97,8 +97,8 @@ Our department has a robust laboratory research program aimed at understanding t
       return (
         <article className="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
           <img
-            src="https://i2-prod.mirror.co.uk/interactives/article12645227.ece/ALTERNATES/s810/doctor.jpg"
-            className="db w-100 br2 br--top"
+                  src="https://www.acmh.org/Files/User/bigstock-Neurology-Diagnostics-Hologra-303179911.jpg"
+                  className="db w-100 br2 br--top"
             alt="Photo menacing."
           />
           <div className="pa2 ph3-ns pb3-ns">

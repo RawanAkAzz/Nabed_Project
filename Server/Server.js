@@ -4,10 +4,13 @@ const app = express();
 var cors = require("cors");
 var firebase = require("firebase/app");
 const bodyParser = require("body-parser");
+app.use('/static', express.static(path.join(__dirname, '../build/static')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-
+app.get("/*", (req, res) => {
+	res.sendFile('index.html', {root: path.join(__dirname, '../build/')});
+})
 
 // app.post('/ProfilePage',(req,res) => {
 //    var image = req.body.image;

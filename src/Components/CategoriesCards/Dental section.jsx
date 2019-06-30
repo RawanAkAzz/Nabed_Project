@@ -85,8 +85,8 @@ const p = {
         </Modal.Footer>
       </Modal>
       <img
-                src="https://www.essrahospital.com/uploads/images/services/services3_54.JPG"
-                className="db w-100 br2 br--top"
+                  src="https://d2cax41o7ahm5l.cloudfront.net/mi/upload-images/dental-science-minl-2019-86082.jpeg"
+                  className="db w-100 br2 br--top"
                 alt="Photo menacing."
               />
 
